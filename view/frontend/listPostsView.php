@@ -3,7 +3,7 @@
 <?php ob_start(); ?>
 <h1>Mon super blog !</h1>
 <p>Derniers billets du blog :</p>
-
+<a href="view/frontend/inscriptionView.php">Inscription</a>
 
 <?php
 while ($data = $posts->fetch())

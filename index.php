@@ -27,6 +27,15 @@ try {
                 throw new Exception('Aucun identifiant de billet envoyé');
             }
         }
+        elseif($_GET['action'] == 'addMember') {
+            if(!empty($_POST['pseudo']) && !empty($_POST['mdp'])){
+                 addMember($_POST['pseudo'], $_POST['mdp']);
+            }
+            else
+            {
+                throw new Exception('Tous les champs ne sont pas remplis !');
+            }
+           }
     }
     else {
         listPosts();
@@ -34,4 +43,5 @@ try {
 }
 catch(Exception $e) {
     echo 'Erreur : ' . $e->getMessage();
+    listPosts();
 }
