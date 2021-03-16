@@ -3,7 +3,13 @@
 <?php ob_start(); ?>
 <h1>Mon super blog !</h1>
 <p>Derniers billets du blog :</p>
-<a href="view/frontend/inscriptionView.php">Inscription</a>
+<nav>
+    <ul>
+        <li><a href="index.php?action=listPosts">liste des billets</a></li>
+        <li><a href="index.php?action=addMember">insciption</a></li>
+        <li><a href="index.php?action=verifMember">connexion</a></li>
+    </ul>
+</nav>
 
 <?php
 while ($data = $posts->fetch())

@@ -28,14 +28,27 @@ try {
             }
         }
         elseif($_GET['action'] == 'addMember') {
-            if(!empty($_POST['pseudo']) && !empty($_POST['mdp'])){
-                 addMember($_POST['pseudo'], $_POST['mdp']);
+            if(!empty($_POST['pseudo']) && !empty($_POST['mdp'])&&!empty($_POST['droit'])){
+                 addMember($_POST['pseudo'], $_POST['mdp'], $_POST['droit']);
+                // listPosts();
+            }
+            elseif (empty($_POST['pseudo']) && empty($_POST['mdp'])) {
+                formAddMember();
             }
             else
             {
                 throw new Exception('Tous les champs ne sont pas remplis !');
             }
            }
+        elseif($_GET['action'] == 'verifMember'){
+            if(isset($_POST['pseudo']) && isset($_POST['mdp'])){
+                verifMember($_POST['pseudo'], $_POST['mdp']);
+            }
+            elseif(empty($_POST['pseudo']) && empty($_POST['mdp']))
+            {
+                formConnexion();
+            }
+        }
     }
     else {
         listPosts();
@@ -43,5 +56,4 @@ try {
 }
 catch(Exception $e) {
     echo 'Erreur : ' . $e->getMessage();
-    listPosts();
 }

@@ -2,21 +2,16 @@
 
 <?php ob_start(); ?>
 <h1>Mon super blog !</h1>
-<h3>Inscription</h3>
-<form action="index.php?action=addMember" method="post">
+<h3>Connexion</h3>
+<form action="index.php?action=verifMember" method="post">
     <div>
         <label for="pseudo">pseudo</label><br />
         <input type="text" id="pseudo" name="pseudo"/>
     </div>
     <div>
         <label for="mdp">mot de passe</label><br />
-        <input type="text" id="mdp" name="mdp"/>
+        <input type="password" id="mdp" name="mdp"/>
     </div>
-    <div>
-        <label for="droit">droit</label><br />
-        <input type="text" id="droit" name="droit"/>
-    <div>
-    <div>
         <input type="submit" value="Valider"/>
     </div>
 </form>
@@ -24,7 +19,3 @@
 <?php $content = ob_get_clean(); ?>
 
 <?php require('template.php'); ?>
-<!--<div>
-         <label for="mdp">retapper votre mot de passe</label><br />
-         <textarea id="mdp" name="mdp"></textarea>
-    </div>-->
