@@ -3,15 +3,27 @@
 <?php ob_start(); ?>
 <h1>Mon super blog !</h1>
 <p>Derniers billets du blog :</p>
-<nav>
-    <ul>
-        <li><a href="index.php?action=listPosts">liste des billets</a></li>
-        <li><a href="index.php?action=addMember">insciption</a></li>
-        <li><a href="index.php?action=verifMember">connexion</a></li>
-    </ul>
-</nav>
 
 <?php
+if (isset($_SESSION['pseudo']))
+{
+    //echo 'Bonjour ' . $_SESSION['pseudo'];
+    $bonjour = 'Bonjour ' . $_SESSION['pseudo'];
+?>
+
+    <p><?= $bonjour ?></p>
+<?php
+}
+/*if(isset($pseudo)){
+    echo 'Bonjour ' . $pseudo;
+}*/
+else{
+//echo 'personne n\'est connecté';
+?>
+<p>personne n'est connecté</p>
+<?php
+}
+//echo $_SESSION['pseudo'];
 while ($data = $posts->fetch())
 {
 ?>

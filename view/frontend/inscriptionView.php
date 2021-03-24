@@ -6,21 +6,21 @@
 <form action="index.php?action=addMember" method="post">
     <div>
         <label for="pseudo">pseudo</label><br />
-        <input type="text" id="pseudo" name="pseudo"/>
+        <input type="text" id="pseudo" name="pseudo" required/>
     </div>
     <div>
         <label for="mdp">mot de passe</label><br />
-        <input type="text" id="mdp" name="mdp"/>
+        <input type="text" id="mdp" name="mdp" required/>
     </div>
     <div>
         <label for="droit">droit</label><br />
-        <input type="text" id="droit" name="droit"/>
+        <input type="text" id="droit" name="droit" required/>
     <div>
     <div>
         <input type="submit" value="Valider"/>
     </div>
 </form>
-<p><a href="index.php?action=listPosts">Retour à la liste des billets</a></p>
+<!--<p><a href="index.php?action=listPosts">Retour à la liste des billets</a></p>-->
 <?php $content = ob_get_clean(); ?>
 
 <?php require('template.php'); ?>
