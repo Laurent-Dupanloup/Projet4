@@ -36,7 +36,20 @@ while ($data = $posts->fetch())
         <p>
             <?= nl2br(htmlspecialchars($data['content'])) ?>
             <br />
-            <em><a href="index.php?action=post&amp;id=<?= $data['id'] ?>">Commentaires</a></em>
+            <?php
+            if(!$_SESSION || $_SESSION['droit']==0){
+                ?>
+            <em><a href="index.php?action=post&amp;id=<?= $data['id'] ?>">Commentaires</a></em> 
+                <?php
+            }
+            elseif($_SESSION['droit']==1){
+                ?>
+                <em><a href="index.php?action=post&amp;id=<?= $data['id'] ?>">Commentaires</a></em>
+                <em><a href="index.php?action=editBillet&amp;id=<?= $data['id'] ?>">editer</a></em>
+                <em><a href="index.php?action=deleteBillet&amp;id=<?= $data['id'] ?>">supprimer</a></em>
+                <?php
+            }
+            ?>
         </p>
     </div>
 <?php

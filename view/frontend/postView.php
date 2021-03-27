@@ -50,9 +50,8 @@ elseif(!$_SESSION){
 //<?php
 while ($comment = $comments->fetch())
 {
-?>
-<?php
-    if(!$_SESSION || $_SESSION['droit'] ==0){
+
+    if(!$_SESSION) { /*|| $_SESSION['droit'] ==0){*/
         ?>
     <p><strong><?= htmlspecialchars($comment['author']) ?></strong> le <?= $comment['comment_date_fr'] ?></p>
     <p><?= nl2br(htmlspecialchars($comment['comment'])) ?></p>
@@ -63,9 +62,22 @@ while ($comment = $comments->fetch())
         ?>
     <p><strong><?= htmlspecialchars($comment['author']) ?></strong> le <?= $comment['comment_date_fr'] ?></p>
     <p><?= nl2br(htmlspecialchars($comment['comment'])) ?></p>
-    <em><a href="index.php?action=deleteCom&amp;id=<?= $comment['id'] ?>">Supprimer le commentaire</a></em>
+    <em><a href="index.php?action=deleteCom&amp;id=<?= $comment['id'] ?>&amp;postid=<?= $post['id'] ?>">Supprimer le commentaire</a></em>
 <?php
-}
+    }
+    elseif($_SESSION['droit']==0)
+    {
+        ?>
+        <p><strong><?= htmlspecialchars($comment['author']) ?></strong> le <?= $comment['comment_date_fr'] ?></p>
+        <p><?= nl2br(htmlspecialchars($comment['comment'])) ?></p>
+<?php
+        if($_SESSION['pseudo'] == $comment['author']){
+?>
+         <em><a href="index.php?action=deleteCom&amp;id=<?= $comment['id'] ?>&amp;postid=<?= $post['id'] ?>">Supprimer le commentaire</a></em>
+         <?php
+     }
+    }
+//&amp;postid=<?= $comment['post_id'] ?
 }
 ?>
 <?php $content = ob_get_clean(); ?>

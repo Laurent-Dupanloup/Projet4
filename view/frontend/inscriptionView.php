@@ -14,7 +14,7 @@
     </div>
     <div>
         <label for="droit">droit</label><br />
-        <input type="text" id="droit" name="droit" required/>
+        <input type="number" id="droit" name="droit" min="0" max="1" required/>
     <div>
     <div>
         <input type="submit" value="Valider"/>
