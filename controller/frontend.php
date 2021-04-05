@@ -23,7 +23,7 @@ function listPosts()
 }*/
 
 
-function post()
+function post($id)
 {
     $postManager = new PostManager();
     $commentManager = new CommentManager();
@@ -34,17 +34,17 @@ function post()
     require('view/frontend/postView.php');
 }
 
-function addComment($postId, $author, $comment)
+function addComment($postid, $comment, $author_id)
 {
     $commentManager = new CommentManager();
 
-    $affectedLines = $commentManager->postComment($postId, $author, $comment);
+    $affectedLines = $commentManager->postComment($postid, $comment, $author_id);
 
     if ($affectedLines === false) {
         throw new Exception('Impossible d\'ajouter le commentaire !');
     }
     else {
-        header('Location: index.php?action=post&id=' . $postId);
+        header('Location: index.php?action=post&id=' . $postid);
     }
 }
 
@@ -89,7 +89,7 @@ function verifMember($pseudo, $mdp)//ajouter les droits
     if (!$resultatMembre)
     {
          //echo 'Mauvais identifiant ou mot de passe 66!';//n'existe pas faire une exeption
-        throw new Exception("Mauvais identifiant ou mot de passe 66!");
+        throw new Exception("Mauvais identifiant ou mot de passe 66 !");
         //die('Mauvais identifiant ou mot de passe 66!');
         
     }
@@ -102,12 +102,13 @@ function verifMember($pseudo, $mdp)//ajouter les droits
             $_SESSION['droit'] = $resultatMembre['droit'];
             //droit en variable de session on peut rediriger vers la page d'acceuil
             //echo var_dump($_SESSION);
+            //$resultat->closeCursor();
             header('Location: index.php');
         }
         else
         {
             //echo 'Mauvais identifiant ou mot de passe 77!'; // exeption
-            throw new Exception("Mauvais identifiant ou mot de passe 77!");
+            throw new Exception("Mauvais identifiant ou mot de passe 77 !");
              //die('Mauvais identifiant ou mot de passe 77!');
             
         }
@@ -139,10 +140,81 @@ function decoMember()
     header('Location: index.php');
 }
 
-function deleteCom($id)
+function deleteCom($id, $postid)
 {
     $commentManager = new CommentManager();
 
-    $delete = $commentManager->comDelete($id);
+    $delete = $commentManager->comDelete($id, $postid);
+    header('Location: index.php?action=postAdmin&id='. $postid);
+}
+
+function createBillet($title, $mytextarea)
+{
+    $postManager = new PostManager();
+    $newPost = $postManager->addPost($title, $mytextarea);
+    header('Location: index.php?action=modeAdmin');
+}
+
+function createBilletForm()
+{
+    require('view/frontend/newPostView.php');
+}
+
+function deleteBillet($id)
+{
+   $postManager = new PostManager();
+    $unPost = $postManager->deletePost($id);
     header('Location: index.php');
+}
+
+function updateBillet($id)
+{
+    $postManager = new PostManager();
+    $unPost2 = $postManager->getBilletEdit($id);
+    require('view/frontend/updateBilletView.php');
+    
+}
+
+function modeAdmin(){
+    $postManager = new PostManager(); 
+    $posts = $postManager->getPosts();
+    require('view/frontend/adminListPostsView.php');
+
+}
+
+function postAdmin($id)
+{
+    $postManager2 = new PostManager();
+    $commentManager2 = new CommentManager();
+
+    $post = $postManager2->getPost($_GET['id']);
+    $comments = $commentManager2->getComments($_GET['id']);
+
+    require('view/frontend/adminPostView.php');
+}
+
+function signalementMsg($id)
+{
+    $commentManager3 = new CommentManager();
+    $signalementCom = $commentManager3->reportMsg($id);
+     //var_dump($signalementCom);
+    if($signalementCom == true){
+     header('Location: index.php');
+    }
+    else
+        throw new Exception('probleme lors du signalement');
+        
+}
+
+function updateBilletComfirm($id, $title, $content)
+{
+    $postManager3 = new PostManager();
+    $insertNewPost = $postManager3->majDuPost($id, $title, $content);
+    //echo $insertNewPost;
+    header('Location: index.php?action=modeAdmin');
+}
+
+function listMsgSignal()
+{
+
 }

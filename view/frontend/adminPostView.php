@@ -13,6 +13,14 @@
     <p>
         <?= /*nl2br(htmlspecialchars(*/$post['content'] ?>
     </p>
+    <?php
+    if($_SESSION['droit'] == 1){
+        ?>
+        <em><a href="index.php?action=deletePost&amp;id=<?= $post['id'] ?>">Supprimer le post</a></em>
+     <?php
+     }
+
+        ?>
 </div>
 
 <h2>Commentaires</h2>
@@ -42,7 +50,7 @@
         <textarea id="comment" name="comment"></textarea>
     </div>
     <div>
-        <input type="submit" >
+        <input type="submit" />
     </div>
 </form>
 
@@ -54,43 +62,12 @@ elseif(!$_SESSION){
 //<?php
 while ($comment = $comments->fetch())
 {
-    //echo var_dump($comment);
-    if(!$_SESSION) { /*|| $_SESSION['droit'] ==0){*/
-        ?>
-    <p><strong><?= htmlspecialchars($comment['pseudo']) ?></strong> le <?= $comment['comment_date_fr'] ?></p>
-    <p><?= nl2br(htmlspecialchars($comment['comment'])) ?></p>
-    <em><a href="index.php?action=deleteCom&amp;id=<?= $comment['ID'] ?>&amp;postid=<?= $post['id'] ?>">signaler le commentaire</a></em>
-    <?php
-    }   
-   /* elseif ($_SESSION['droit']==1)
-    {
-        ?>
+    ?>
     <p><strong><?= htmlspecialchars($comment['pseudo']) ?></strong> le <?= $comment['comment_date_fr'] ?></p>
     <p><?= nl2br(htmlspecialchars($comment['comment'])) ?></p>
     <p><?= $comment['ID'] ?></p>
     <em><a href="index.php?action=deleteCom&amp;id=<?= $comment['ID']?>&amp;postid=<?= $post['id'] ?>">Supprimer le commentaire</a></em>
-<?php
-    }*/
-    elseif($_SESSION['droit']==0 || $_SESSION['droit'] ==1)
-    {
-        ?>
-        <p><strong><?= htmlspecialchars($comment['pseudo']) ?></strong> le <?= $comment['comment_date_fr'] ?></p>
-        <p><?= nl2br(htmlspecialchars($comment['comment'])) ?></p>
-        <p><?= $comment['ID'] ?></p>
-    <form action="index.php?action=signalementMsg&amp;id=<?= $comment['ID'] ?>" method="post">
-         <input type="checkbox" id="signalement" name="signalement"
-         unchecked required>
-         <label for="signalement">signaler le msg</label>
-         <input type="submit" value="Valider"><br>
-    </form>
-<?php
-        if($_SESSION['id'] == $comment['author_id']){
-?>
-         <em><a href="index.php?action=deleteCom&amp;id=<?= $comment['ID'] ?>&amp;postid=<?= $post['id'] ?>">Supprimer le commentaire</a></em>
          <?php
-     }
-    }
-//&amp;postid=<?= $comment['post_id'] ?
 }
 ?>
 <?php $content = ob_get_clean(); ?>

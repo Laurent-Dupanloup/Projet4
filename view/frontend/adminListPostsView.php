@@ -24,7 +24,14 @@ else{
 <?php
 }
 //echo $_SESSION['pseudo'];
-while ($data = $posts->fetch())
+if(!$_SESSION || $_SESSION['droit']==0)
+{
+    throw new Exception('vous navez pas les droits admin');
+    
+}
+else
+    {
+        while ($data = $posts->fetch())
 {
 ?>
     <div class="news">
@@ -33,13 +40,16 @@ while ($data = $posts->fetch())
             <em>le <?= $data['creation_date_fr'] ?></em>
         </h3>
         
-        <div class="newstext">
-            <?= /*nl2br(htmlspecialchars*/($data['content']) ?>
+        <p>
+            <?= /*nl2br(htmlspecialchars(*/$data['content'] ?>
             <br />
-            <em><a href="index.php?action=post&amp;id=<?= $data['id'] ?>">Commentaires</a></em> 
-        </div>
+                <em><a href="index.php?action=postAdmin&amp;id=<?= $data['id'] ?>">Commentaires</a></em>
+                <em><a href="index.php?action=updateBillet&amp;id=<?= $data['id'] ?>">update</a></em>
+                <em><a href="index.php?action=deleteBillet&amp;id=<?= $data['id'] ?>">supprimer</a></em>
+        </p>
     </div>
 <?php
+}
 }
 $posts->closeCursor();
 ?>
