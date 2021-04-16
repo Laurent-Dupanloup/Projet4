@@ -10,8 +10,7 @@ class CommentManager extends Manager
     ON comments.author_id = membre.id WHERE comments.post_id = ? ORDER BY comment_date DESC');
         $comments->execute(array($postId));
 
-        return $comments;//'SELECT id, author, comment, DATE_FORMAT(comment_date, \'%d/%m/%Y à %Hh%imin%ss\') AS comment_date_fr FROM comments WHERE post_id = ? ORDER BY comment_date DESC')
-
+        return $comments;
         /*ancienne requete 
         SELECT id, author, comment, DATE_FORMAT(comment_date, \'%d/%m/%Y à %Hh%imin%ss\')AS comment_date_fr, author_id FROM comments WHERE post_id = ? ORDER BY comment_date DESC
         */
@@ -23,32 +22,26 @@ class CommentManager extends Manager
     clef etrangere pour les msg
     ALTER TABLE comments
     ADD [CONSTRAINT clef_etrangere_author]  -- On donne un nom à la clé (facultatif)
-    FOREIGN KEY author_id             -- La colonne sur laquelle on ajoute la clé
+    FOREIGN KEY (author_id)             -- La colonne sur laquelle on ajoute la clé
     REFERENCES membre(id)  -- La table et la colonne de référence
-     ON DELETE SET NULL   
-        -- N'oublions pas de remettre le ON DELETE !
-    ON UPDATE CASCADE;   
+     ON DELETE CASCAQUE   
+    ON UPDATE CASCADE;   */
+/*
 
+   ALTER TABLE comments
+    ADD CONSTRAINT clef_etrangere_posts
+    FOREIGN KEY (post_id)
+    REFERENCES posts(id)
+     ON DELETE CASCADE; // Cannot add or update a child row: a foreign key constraint fails ()
 
-    ALTER TABLE comments
-    ADD [CONSTRAINT clef_etrangere_author]
-    FOREIGN KEY author_id
-    REFERENCES membre(id);
-     ON DELETE SET NULL   
-    ON UPDATE CASCADE;   
+    //voir pour les membres si on supprime tout les commentaires
+
+    soit retirer le commentaire soit retirer le signalement
 
     
-    clef etrangere pour les billets
-
-    ALTER TABLE comments
-    ADD [CONSTRAINT clef_etrangere_postid]
-    FOREIGN KEY post_id
-    REFERENCES posts(id);
-     ON DELETE SET NULL   
-    ON UPDATE CASCADE;
-
 
 */
+    //clef etrangere clef_etrangere_author et clef_etrangere_posts
 
     }
 
@@ -79,6 +72,24 @@ class CommentManager extends Manager
            SET signalement = 1 WHERE id = :id');
         $signal = $req->execute(array('id' => $id));
         return $signal;
+    }
+
+    public function cancelReport($id)
+    {
+        $db = $this->dbConnect();
+         $req = $db->prepare('UPDATE comments
+           SET signalement = 0 WHERE id = :id');
+        $cancelSignal = $req->execute(array('id' => $id));
+        return $cancelSignal;
+    }
+
+    public function reportMsgList()
+    {
+        $db = $this->dbConnect();
+         /*$listMsg = $db->query('SELECT id, post_id, comment, signalement, DATE_FORMAT(comment_date, \'%d/%m/%Y à %Hh%imin%ss\') AS comment_date_fr FROM comments WHERE signalement = 1 ORDER BY comment_date DESC');*/
+         $listMsg = $db->query('SELECT comments.id as ID, comments.post_id, comments.comment, comments.signalement, comments.author_id, DATE_FORMAT(comment_date, \'%d/%m/%Y à %Hh%imin%ss\')AS comment_date_fr, membre.id, membre.pseudo FROM comments INNER JOIN membre 
+    ON comments.author_id = membre.id WHERE comments.signalement = 1 ORDER BY comment_date DESC');
+        return $listMsg;
     }
 }
 

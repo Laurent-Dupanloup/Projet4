@@ -58,11 +58,6 @@ try {
         elseif ($_GET['action'] == 'decoMember') {
                 decoMember();
             }
-        /*elseif ($_GET['error'] == 'mauvais_identifiant_mdp'){
-                //throw new Exception("mauvais identifiant mdp");
-            listPosts();
-                
-        }*/
         elseif ($_GET['action'] == 'deleteCom')
         {
             if(isset($_GET['id']) && $_GET['id'] > 0)
@@ -139,7 +134,7 @@ try {
             }
         }
         elseif ($_GET['action']== 'signalementMsg'){
-            if (isset($_GET['id']) && $_GET['id'] > 0 && ($_POST['signalement']==true)) {
+            if (isset($_GET['id']) && ($_GET['id'] > 0)) {
                 signalementMsg($_GET['id']);
             }
             else
@@ -150,6 +145,12 @@ try {
         {
             listMsgSignal();
         }
+        /*else
+            throw new Exception('vous netes pas admin');*/
+        
+        elseif ($_GET['action'] == 'signalementCancel') {
+                signalementCancel($_GET['id']);
+            }    
     }
 
     else {

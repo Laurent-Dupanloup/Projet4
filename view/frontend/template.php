@@ -24,32 +24,38 @@
     </head>
         
     <body>
+    	<header>
     	<nav>
     <ul>
-        <li><a href="index.php?action=listPosts">liste des billets</a></li>
         <?php 
         	if(!$_SESSION){
         ?>
+        <li><a href="index.php?action=listPosts">liste des billets</a></li>
         <li><a href="index.php?action=addMember">inscription</a></li>
         <li><a href="index.php?action=verifMember">connexion</a></li>
     	<?php
     		} 
-        	if($_SESSION){
-        		var_dump($_SESSION);
-        ?>
+
+    		elseif($_SESSION){
+    			if($_SESSION['droit'] == 0){
+    				?>
+        <li><a href="index.php?action=listPosts">liste des billets</a></li>
         <li><a href="index.php?action=decoMember">deconnexion</a></li><!--faire des test pour inscription connexion-->
     	<?php 
-    		if($_SESSION['droit']==1){
-    		?>
+    			}
+    			elseif($_SESSION['droit']==1){
+    				?>
     			<li><a href="index.php?action=modeAdmin">admin</a></li>
     			<li><a href="index.php?action=createBillet">Creer un billet</a></li>
     			<li><a href="index.php?action=listMsgSignal">messages signalés</a></li>
+    			<li><a href="index.php?action=decoMember">deconnexion</a></li>
     		<?php
+    			}
     		}
-    	}
-    	?>
+    		?>
     </ul>
 </nav>
+</header>
         <?= $content ?>
     </body>
 </html>

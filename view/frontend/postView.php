@@ -2,7 +2,6 @@
 
 <?php ob_start(); ?>
 <h1>Mon super blog !</h1>
-<p><a href="index.php">Retour à la liste des billets</a></p>
 
 <div class="news">
     <h3>
@@ -59,39 +58,28 @@ while ($comment = $comments->fetch())
         ?>
     <p><strong><?= htmlspecialchars($comment['pseudo']) ?></strong> le <?= $comment['comment_date_fr'] ?></p>
     <p><?= nl2br(htmlspecialchars($comment['comment'])) ?></p>
-    <em><a href="index.php?action=deleteCom&amp;id=<?= $comment['ID'] ?>&amp;postid=<?= $post['id'] ?>">signaler le commentaire</a></em>
     <?php
     }   
-   /* elseif ($_SESSION['droit']==1)
-    {
-        ?>
-    <p><strong><?= htmlspecialchars($comment['pseudo']) ?></strong> le <?= $comment['comment_date_fr'] ?></p>
-    <p><?= nl2br(htmlspecialchars($comment['comment'])) ?></p>
-    <p><?= $comment['ID'] ?></p>
-    <em><a href="index.php?action=deleteCom&amp;id=<?= $comment['ID']?>&amp;postid=<?= $post['id'] ?>">Supprimer le commentaire</a></em>
-<?php
-    }*/
     elseif($_SESSION['droit']==0 || $_SESSION['droit'] ==1)
     {
         ?>
         <p><strong><?= htmlspecialchars($comment['pseudo']) ?></strong> le <?= $comment['comment_date_fr'] ?></p>
         <p><?= nl2br(htmlspecialchars($comment['comment'])) ?></p>
         <p><?= $comment['ID'] ?></p>
-    <form action="index.php?action=signalementMsg&amp;id=<?= $comment['ID'] ?>" method="post">
-         <input type="checkbox" id="signalement" name="signalement"
-         unchecked required>
-         <label for="signalement">signaler le msg</label>
-         <input type="submit" value="Valider"><br>
-    </form>
 <?php
         if($_SESSION['id'] == $comment['author_id']){
 ?>
          <em><a href="index.php?action=deleteCom&amp;id=<?= $comment['ID'] ?>&amp;postid=<?= $post['id'] ?>">Supprimer le commentaire</a></em>
          <?php
      }
+         else{
+            ?>
+            <em><a href="index.php?action=signalementMsg&amp;id=<?= $comment['ID'] ?>">signaler le message</a></em>
+    <?php
+         }
+     }
     }
 //&amp;postid=<?= $comment['post_id'] ?
-}
 ?>
 <?php $content = ob_get_clean(); ?>
 

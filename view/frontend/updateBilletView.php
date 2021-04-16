@@ -6,8 +6,8 @@
 <?=$unPost2['id'] ?>
 <form action="index.php?action=updateBilletComfirm&amp;id=<?= $unPost2['id'] ?>" method="post">
     <div>
-        <label for="title">titre</label><br />
-        <input type="text" id="title" name="title" required/>
+        <!--<label for="title"></label><br />-->
+        <input type="text" id="title" name="title" value="<?= htmlspecialchars($unPost2['title']) ?>" required/>
     </div>
     <div>
     <div class="news">
@@ -31,7 +31,6 @@
 
 //$unPost->closeCursor();
 ?>
-<!--<p><a href="index.php?action=listPosts">Retour à la liste des billets</a></p>-->
 <?php $content = ob_get_clean(); ?>
 
 <?php require('template.php'); ?>

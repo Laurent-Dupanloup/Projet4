@@ -13,16 +13,6 @@ function listPosts()
     require('view/frontend/listPostsView.php');
 }
 
-/*function listPosts2($pseudo)
-{
-    $postManager = new PostManager();
-    $posts = $postManager->getPosts();
-    //$_SESSION['pseudo'] = $pseudo;
-
-    require('view/frontend/listPostsView.php');
-}*/
-
-
 function post($id)
 {
     $postManager = new PostManager();
@@ -67,23 +57,11 @@ function formAddMember()
     require('view/frontend/inscriptionView.php');
 }
 
-function verifMember($pseudo, $mdp)//ajouter les droits
+function verifMember($pseudo, $mdp)
 {  
     $userConnexion = new MemberManager();
     $resultat = $userConnexion->checkLoginPass($pseudo);
     $resultatMembre =$resultat->fetch();
-
-    // Comparaison du pass envoyé via le formulaire avec la base
-    //$isPasswordCorrect = password_verify($mdp, $resultatMembre['mdp']);
-    /*echo var_dump($resultatMembre['mdp']);
-    echo '</br>';
-    echo var_dump($mdp);
-    echo '</br>';
-    echo 'on est ds verifMember';
-    echo '</br>';
-    echo var_dump($isPasswordCorrect);*/
-   /* echo (gettype($isPasswordCorrect));
-    echo '</br>';*/
 //try{
 
     if (!$resultatMembre)
@@ -103,7 +81,13 @@ function verifMember($pseudo, $mdp)//ajouter les droits
             //droit en variable de session on peut rediriger vers la page d'acceuil
             //echo var_dump($_SESSION);
             //$resultat->closeCursor();
-            header('Location: index.php');
+            if($_SESSION['droit'] != 1){
+                header('Location: index.php');
+            }
+            elseif($_SESSION['droit'] == 1)
+            {
+                header('Location: index.php?action=modeAdmin');
+            }
         }
         else
         {
@@ -135,8 +119,6 @@ function decoMember()
     // Suppression des cookies de connexion automatique
    // setcookie('pseudo', '');
    // setcookie('mdp', '');
-    //echo 'vous etes deconnectes';
-    //require('view/frontend/deconnexionView.php');
     header('Location: index.php');
 }
 
@@ -197,7 +179,6 @@ function signalementMsg($id)
 {
     $commentManager3 = new CommentManager();
     $signalementCom = $commentManager3->reportMsg($id);
-     //var_dump($signalementCom);
     if($signalementCom == true){
      header('Location: index.php');
     }
@@ -210,11 +191,21 @@ function updateBilletComfirm($id, $title, $content)
 {
     $postManager3 = new PostManager();
     $insertNewPost = $postManager3->majDuPost($id, $title, $content);
-    //echo $insertNewPost;
     header('Location: index.php?action=modeAdmin');
 }
 
 function listMsgSignal()
 {
+    $commentManager4 = new CommentManager();
+    
+    $commentReportList = $commentManager4->reportMsgList();
 
+    require('view/frontend/adminListReportMsgView.php');
+}
+
+function signalementCancel($id)
+{
+    $commentManager5 = new CommentManager();
+    $reportcancel = $commentManager5->cancelReport($id);
+    header('Location: index.php?action=listMsgSignal');
 }
