@@ -72,14 +72,17 @@ try {
         }
         elseif($_GET['action'] == 'createBillet')
         {
+            if($_SESSION){
             if(isset($_POST['title']) && isset($_POST['mytextarea']) && ($_SESSION['droit'] == 1)){
                 createBillet($_POST['title'], /*strip_tags (*/$_POST['mytextarea']/*)htmlspecialchars_decode($_POST['mytextarea'])*/);
             }
 
-            elseif(!isset($_POST['title']) && !isset($_POST['mytextarea']))
+
+            elseif(!isset($_POST['title']) && !isset($_POST['mytextarea']) && ($_SESSION['droit'] == 1))
             {
                 createBilletForm();
             }
+        }
             else
             {
                 //echo $_POST['mytextarea'];
@@ -118,11 +121,13 @@ try {
                 
         }
         elseif($_GET['action']== 'modeAdmin'){
+            if($_SESSION){
             if($_SESSION['droit']==1){
                 modeAdmin();
             }
-            else
-                throw new Exception('problem avec le mode admin');
+            }
+            elseif(!$_SESSION || $_SESSION['droit'] == 0)
+                throw new Exception('problem avec le mode admin ou vous n\'êtes pas admin');
                 
         }
         elseif ($_GET['action'] == 'postAdmin') {
@@ -134,21 +139,28 @@ try {
             }
         }
         elseif ($_GET['action']== 'signalementMsg'){
+            if($_SESSION){
             if (isset($_GET['id']) && ($_GET['id'] > 0)) {
                 signalementMsg($_GET['id']);
             }
+        }
             else
                 throw new Exception('problem avec le signalement - ou alors vous navez pas les droits requis');
                 
         }
         elseif($_GET['action'] == 'listMsgSignal')
         {
-            listMsgSignal();
-        }
-        /*else
-            throw new Exception('vous netes pas admin');*/
+            if($_SESSION)
+            {
+                if($_SESSION['droit'] == 1){
+                    listMsgSignal();
+                }
+            }
+        else
+            throw new Exception('vous netes pas admin');
+    }
         
-        elseif ($_GET['action'] == 'signalementCancel') {
+        elseif($_GET['action'] == 'signalementCancel') {
                 signalementCancel($_GET['id']);
             }    
     }

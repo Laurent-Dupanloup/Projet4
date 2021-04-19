@@ -1,7 +1,7 @@
-<?php $title = 'Mon blog'; ?>
+<?php $title = 'Blog pour un écrivain'; ?>
 
 <?php ob_start(); ?>
-<h1>Mon super blog !</h1>
+<h1>Billet simple pour l'Alaska</h1>
 <h3>mise à jour du post</h3>
 <?=$unPost2['id'] ?>
 <form action="index.php?action=updateBilletComfirm&amp;id=<?= $unPost2['id'] ?>" method="post">

@@ -1,7 +1,7 @@
 <?php $title = htmlspecialchars($post['title']); ?>
 
 <?php ob_start(); ?>
-<h1>Mon super blog !</h1>
+<h1>Billet simple pour l'Alaska</h1>
 
 <div class="news">
     <h3>
@@ -13,21 +13,8 @@
         <?= /*nl2br(htmlspecialchars(*/$post['content'] ?>
     </p>
 </div>
-
+<div class="blog">
 <h2>Commentaires</h2>
-<!--<?php
-//if (isset($_SESSION['id']) AND isset($_SESSION['pseudo']))
-{
- //   echo 'Bonjour ' . $_SESSION['pseudo'];
-}
-//else
-//echo 'ca marche pas2';
-?>-->
-<?php 
-//echo (var_dump($comments->fetch()));
-//echo('$comment');
-?>
-
 <?php 
     if($_SESSION){
 ?>
@@ -50,11 +37,9 @@ elseif(!$_SESSION){
     echo 'veuillez vous connecté pour poster un msg';
 }
 
-//<?php
 while ($comment = $comments->fetch())
 {
-    //echo var_dump($comment);
-    if(!$_SESSION) { /*|| $_SESSION['droit'] ==0){*/
+    if(!$_SESSION) { 
         ?>
     <p><strong><?= htmlspecialchars($comment['pseudo']) ?></strong> le <?= $comment['comment_date_fr'] ?></p>
     <p><?= nl2br(htmlspecialchars($comment['comment'])) ?></p>
@@ -65,7 +50,6 @@ while ($comment = $comments->fetch())
         ?>
         <p><strong><?= htmlspecialchars($comment['pseudo']) ?></strong> le <?= $comment['comment_date_fr'] ?></p>
         <p><?= nl2br(htmlspecialchars($comment['comment'])) ?></p>
-        <p><?= $comment['ID'] ?></p>
 <?php
         if($_SESSION['id'] == $comment['author_id']){
 ?>
@@ -81,6 +65,7 @@ while ($comment = $comments->fetch())
     }
 //&amp;postid=<?= $comment['post_id'] ?
 ?>
+</div> 
 <?php $content = ob_get_clean(); ?>
 
 <?php require('template.php'); ?>

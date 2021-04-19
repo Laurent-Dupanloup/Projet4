@@ -1,8 +1,8 @@
-<?php $title = 'Mon blog'; ?>
+<?php $title = 'Blog pour un écrivain'; ?>
 
 <?php ob_start(); ?>
-<h1>Mon super blog !</h1>
-<h3>Creation du post</h3>
+<h1>Billet simple pour l'Alaska</h1>
+<h3>Creation du billet</h3>
 <form action="index.php?action=createBillet" method="post">
     <div>
         <label for="title">titre</label><br />

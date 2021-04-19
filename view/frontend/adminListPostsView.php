@@ -1,29 +1,23 @@
-<?php $title = 'Mon blog'; ?>
+<?php $title = 'Blog pour un écrivain'; ?>
 
 <?php ob_start(); ?>
-<h1>Mon super blog !</h1>
+<h1>Billet simple pour l'Alaska</h1>
 <p>Derniers billets du blog :</p>
 
 <?php
 if (isset($_SESSION['pseudo']))
 {
-    //echo 'Bonjour ' . $_SESSION['pseudo'];
     $bonjour = 'Bonjour ' . $_SESSION['pseudo'];
 ?>
 
     <p><?= $bonjour ?></p>
 <?php
 }
-/*if(isset($pseudo)){
-    echo 'Bonjour ' . $pseudo;
-}*/
 else{
-//echo 'personne n\'est connecté';
 ?>
 <p>personne n'est connecté</p>
 <?php
 }
-//echo $_SESSION['pseudo'];
 if(!$_SESSION || $_SESSION['droit']==0)
 {
     throw new Exception('vous navez pas les droits admin');
