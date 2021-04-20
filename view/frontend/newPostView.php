@@ -3,6 +3,7 @@
 <?php ob_start(); ?>
 <h1>Billet simple pour l'Alaska</h1>
 <h3>Creation du billet</h3>
+<div class="divform">
 <form action="index.php?action=createBillet" method="post">
     <div>
         <label for="title">titre</label><br />
@@ -19,7 +20,7 @@
         <input type="submit" value="Valider"/>
     </div>
 </form>
-
+</div>
 <!--<p><a href="index.php?action=listPosts">Retour à la liste des billets</a></p>-->
 <?php $content = ob_get_clean(); ?>
 

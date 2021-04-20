@@ -3,27 +3,43 @@ h1
     text-align:center;
     margin:auto;
     padding-top: 100px;
+    width: 100%;
+    text-align: justify-all;
 }
+
+.mesh1
+{
+
+}
+
+.mesh3
+{
+    margin-top: 50px;
+    font-size : 1.7em;
+}
+
 h3
 {
     text-align:center;
     margin:auto;
-    background-color:black;
+    background-color:lightblue;
     color:white;
     font-size:0.9em;
+    border-radius : 12px;
 
 }
 .news p
 {
-    background-color:#CCCCCC;
-    margin-top:0px;
+    margin:auto;
 }
 
 .news
 {
     width:70%;
     margin:auto;
-    background-color:#CCCCCC;
+    /*background-color:#CCCCCC;*/
+    border: 1px solid black;
+    border-radius: 12px;
 }
 
 .blog
@@ -40,22 +56,30 @@ body
     justify-content: flex-start;
     flex-direction: column;
     margin:auto;
+    /*border: 20px solid black;*/
 }
 
-/*title
+.img1
 {
-    position: absolute;
-    padding-bottom: 20px;
-}*/
+    width: 100%;
+    height: 600px;
+}
+
+.textacceuil1
+{
+   margin-left: 20%;
+}
+
+
 
 a
 {
     text-decoration: none;
-    color: blue;
+    color: red;
 }
 .newstext
 {
-    background-color:#CCCCCC;
+   /* background-color:#CCCCCC;*/
     margin-top:0px;
 }
 
@@ -69,11 +93,18 @@ header{
 position: fixed;
     width:100%;
     display: flex;
-    top: 0px;
-    align-items: flex-start;
-    justify-content: space-between;
+    /*align-items: flex-start;
+    justify-content: space-between;*/
     padding:0 0 0 0;
     background-color:#fff;
+    /*margin-top: 0px;*/
+
+}
+
+nav
+{
+    position: relative;
+    left: 1000px;
 }
 
 header nav ul li{
@@ -97,20 +128,27 @@ header nav ul li a{
     padding:40px 15px 0px 15px;
     border-top:none;
     color:#777777;
+    font-size: 1.5em;
 }
 
-form
+/*form
 {
     margin: 0px auto;
-    max-width: 400px;
+    width: 1000px;
     padding: 20px 12px 10px 20px;
+}*/
+
+.divform
+{
+    display: grid;
+    margin: 0px auto;
+    width: 500px;
+    padding: 100px 12px 10px 20px;
 }
 
-/*<form action="index.php?action=signalementMsg&amp;id=<?= $comment['ID'] ?>" method="post">
-         <input type="checkbox" id="signalement" name="signalement"
-         unchecked required>
-         <label for="signalement">signaler le msg</label>
-         <input type="submit" value="Valider"><br>
-    </form>
-    */
 
+#btnvalider
+{
+    margin-top: 10px;
+    margin-left:  150px; 
+}

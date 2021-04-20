@@ -2,28 +2,22 @@
 
 <?php ob_start(); ?>
 <h1>Billet simple pour l'Alaska</h1>
-<p>Derniers billets du blog :</p>
+<p class="textacceuil1">Derniers billets du blog :</p>
 
 <?php
 if (isset($_SESSION['pseudo']))
 {
-    //echo 'Bonjour ' . $_SESSION['pseudo'];
     $bonjour = 'Bonjour ' . $_SESSION['pseudo'];
 ?>
 
-    <p><?= $bonjour ?></p>
+    <p class="textacceuil2"><?= $bonjour ?></p>
 <?php
 }
-/*if(isset($pseudo)){
-    echo 'Bonjour ' . $pseudo;
-}*/
 else{
-//echo 'personne n\'est connecté';
 ?>
-<p>personne n'est connecté</p>
+<p class="textacceuil2">personne n'est connecté</p>
 <?php
 }
-//echo $_SESSION['pseudo'];
 while ($data = $posts->fetch())
 {
 ?>

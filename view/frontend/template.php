@@ -56,6 +56,8 @@
     </ul>
 </nav>
 </header>
+		<img class="img1" src="antique-book-bindings-books-1005324-2000x1200.jpg">
+		
         <?= $content ?>
     </body>
 </html>

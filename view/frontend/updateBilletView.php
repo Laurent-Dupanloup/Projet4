@@ -3,7 +3,7 @@
 <?php ob_start(); ?>
 <h1>Billet simple pour l'Alaska</h1>
 <h3>mise à jour du post</h3>
-<?=$unPost2['id'] ?>
+<div class="divform">
 <form action="index.php?action=updateBilletComfirm&amp;id=<?= $unPost2['id'] ?>" method="post">
     <div>
         <!--<label for="title"></label><br />-->
@@ -24,9 +24,10 @@
       <!--<textarea id="mytextarea" name="mytextarea">test</textarea>-->
     </div>
     <div>
-        <input type="submit" value="Valider"/>
+        <input id="btnvalider" type="submit" value="Valider"/>
     </div>
 </form>
+</div>
 <?php
 
 //$unPost->closeCursor();
