@@ -2,7 +2,7 @@
 
 <?php ob_start(); ?>
 <h1 class="mesh1">Billet simple pour l'Alaska</h1>
-<h3 class="mesh3">Connexion</h3>
+<h3 class="mesh3" id="connexion">Connexion</h3>
 <div class="divform">
 <form action="index.php?action=verifMember" method="post">
     <div>

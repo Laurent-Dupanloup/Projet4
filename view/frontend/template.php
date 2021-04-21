@@ -31,8 +31,8 @@
         	if(!$_SESSION){
         ?>
         <li><a href="index.php?action=listPosts">liste des billets</a></li>
-        <li><a href="index.php?action=addMember">inscription</a></li>
-        <li><a href="index.php?action=verifMember">connexion</a></li>
+        <li><a href="index.php?action=addMember#inscription">inscription</a></li>
+        <li><a href="index.php?action=verifMember#connexion">connexion</a></li>
     	<?php
     		} 
 
@@ -46,7 +46,7 @@
     			elseif($_SESSION['droit']==1){
     				?>
     			<li><a href="index.php?action=modeAdmin">admin</a></li>
-    			<li><a href="index.php?action=createBillet">Creer un billet</a></li>
+    			<li><a href="index.php?action=createBillet#creerbillet">Creer un billet</a></li>
     			<li><a href="index.php?action=listMsgSignal">messages signalés</a></li>
     			<li><a href="index.php?action=decoMember">deconnexion</a></li>
     		<?php
@@ -59,5 +59,8 @@
 		<img class="img1" src="antique-book-bindings-books-1005324-2000x1200.jpg">
 		
         <?= $content ?>
+    <footer>
+ 		<p>Copyright 2021 Laurent Dupanloup étudiant Openclassrooms. Ce Site est un projet étudiant <a href="https://openclassrooms.com/">OpenClassrooms</a></p>
+	</footer>
     </body>
 </html>

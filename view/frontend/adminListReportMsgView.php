@@ -3,7 +3,7 @@
 <?php ob_start(); ?>
 <h1>Billet simple pour l'Alaska</h1>
 
-
+<div class="blog">
 <h2>Commentaires</h2>
 <?php
 while ($comment = $commentReportList->fetch())
@@ -16,5 +16,6 @@ while ($comment = $commentReportList->fetch())
          <?php
      }
 ?>
+</div>
 <?php $content = ob_get_clean(); ?>
 <?php require('template.php'); ?>

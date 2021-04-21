@@ -16,12 +16,14 @@
     if($_SESSION['droit'] == 1){
         ?>
         <em><a href="index.php?action=deletePost&amp;id=<?= $post['id'] ?>">Supprimer le post</a></em>
+        <em><a href="index.php?action=updateBillet&amp;id=<?= $data['id'] ?>#majbillet">update</a></em>
      <?php
      }
 
         ?>
 </div>
 
+<div class="blog">
 <h2>Commentaires</h2>
 <!--<?php
 //if (isset($_SESSION['id']) AND isset($_SESSION['pseudo']))
@@ -69,6 +71,7 @@ while ($comment = $comments->fetch())
          <?php
 }
 ?>
+</div>
 <?php $content = ob_get_clean(); ?>
 
 <?php require('template.php'); ?>

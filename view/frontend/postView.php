@@ -10,11 +10,11 @@
     </h3>
     
     <p>
-        <?= /*nl2br(htmlspecialchars(*/$post['content'] ?>
+            <?= /*nl2br(htmlspecialchars(*/$post['content'] ?>
     </p>
 </div>
 <div class="blog">
-<h2>Commentaires</h2>
+<h2 id="commentaires">Commentaires</h2>
 <?php 
     if($_SESSION){
 ?>
