@@ -4,7 +4,7 @@
 <h1>Billet simple pour l'Alaska</h1>
 
 <div class="news">
-    <h3>
+    <h3 class="titrepost">
         <?= htmlspecialchars($post['title']) ?>
         <em>le <?= $post['creation_date_fr'] ?></em>
     </h3>
@@ -53,12 +53,12 @@ while ($comment = $comments->fetch())
 <?php
         if($_SESSION['id'] == $comment['author_id']){
 ?>
-         <em><a href="index.php?action=deleteCom&amp;id=<?= $comment['ID'] ?>&amp;postid=<?= $post['id'] ?>">Supprimer le commentaire</a></em>
+         <em><a href="index.php?action=deleteCom&amp;id=<?= $comment['ID'] ?>&amp;postid=<?= $post['id'] ?>" class="crud">Supprimer le commentaire</a></em>
          <?php
      }
          else{
             ?>
-            <em><a href="index.php?action=signalementMsg&amp;id=<?= $comment['ID'] ?>">signaler le message</a></em>
+            <em><a href="index.php?action=signalementMsg&amp;id=<?= $comment['ID'] ?>" class="crud">signaler le message</a></em>
     <?php
          }
      }

@@ -1,7 +1,7 @@
 <?php $title = 'Blog pour un écrivain'; ?>
 
 <?php ob_start(); ?>
-<h1>Billet simple pour l'Alaska</h1>
+<h1 id="admin">Billet simple pour l'Alaska</h1>
 <p class="textacceuil1">Derniers billets du blog :</p>
 
 <?php
@@ -29,18 +29,18 @@ else
 {
 ?>
     <div class="news">
-        <h3>
+        <h3 class="titrepost">
             <?= htmlspecialchars($data['title']) ?>
             <em>le <?= $data['creation_date_fr'] ?></em>
         </h3>
         
-        <p>
+        <div class="newstext">
             <?= /*nl2br(htmlspecialchars(*/$data['content'] ?>
             <br />
-                <em><a href="index.php?action=postAdmin&amp;id=<?= $data['id'] ?>">Commentaires</a></em>
-                <em><a href="index.php?action=updateBillet&amp;id=<?= $data['id'] ?>#majbillet">update</a></em>
-                <em><a href="index.php?action=deleteBillet&amp;id=<?= $data['id'] ?>">supprimer</a></em>
-        </p>
+                <em><a href="index.php?action=postAdmin&amp;id=<?= $data['id'] ?>#commentaires" class="crud">Commentaires</a></em>
+                <em><a href="index.php?action=updateBillet&amp;id=<?= $data['id'] ?>#majbillet" class="crud">update</a></em>
+                <em><a href="index.php?action=deleteBillet&amp;id=<?= $data['id'] ?>" class="crud">supprimer</a></em>
+        </div>
     </div>
 <?php
 }

@@ -3,13 +3,10 @@
     <head>
         <meta charset="utf-8" />
         <title><?= $title ?></title>
-        <link href="public/css/style.css" rel="stylesheet" /> 
+        <link href="public/css/mediumscreen.css" rel="stylesheet" />
+		<link href="public/css/smallscreen.css" rel="stylesheet" />
+        <link href="public/css/style.css" rel="stylesheet" />
          <script src="https://cdn.tiny.cloud/1/3vf77h5533axpf5nejitpmjqtpqoa59l3ksy0e06gn2nm8hn/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
-         <!--<script>
-      tinymce.init({
-        selector: '#content'
-      });
-    </script>-->
      <script>
     tinymce.init({
       selector: '#mytextarea',
@@ -30,7 +27,7 @@
         <?php 
         	if(!$_SESSION){
         ?>
-        <li><a href="index.php?action=listPosts">liste des billets</a></li>
+        <li><a href="index.php?action=listPosts#listebillets">liste des billets</a></li>
         <li><a href="index.php?action=addMember#inscription">inscription</a></li>
         <li><a href="index.php?action=verifMember#connexion">connexion</a></li>
     	<?php
@@ -39,15 +36,15 @@
     		elseif($_SESSION){
     			if($_SESSION['droit'] == 0){
     				?>
-        <li><a href="index.php?action=listPosts">liste des billets</a></li>
+        <li><a href="index.php?action=listPosts#listebillets">liste des billets</a></li>
         <li><a href="index.php?action=decoMember">deconnexion</a></li><!--faire des test pour inscription connexion-->
     	<?php 
     			}
     			elseif($_SESSION['droit']==1){
     				?>
-    			<li><a href="index.php?action=modeAdmin">admin</a></li>
+    			<li><a href="index.php?action=modeAdmin#admin">admin</a></li>
     			<li><a href="index.php?action=createBillet#creerbillet">Creer un billet</a></li>
-    			<li><a href="index.php?action=listMsgSignal">messages signalés</a></li>
+    			<li><a href="index.php?action=listMsgSignal#messagessignal">messages signalés</a></li>
     			<li><a href="index.php?action=decoMember">deconnexion</a></li>
     		<?php
     			}
