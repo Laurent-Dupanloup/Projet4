@@ -53,12 +53,11 @@ class PostManager extends Manager
     public function majDuPost($id, $title, $content)
     {
         $db = $this->dbConnect();
-        $req = $db->prepare('UPDATE posts SET title = ?, content = ?, creation_date = NOW() WHERE id = ?');    /*('UPDATE posts SET title, content, creation_date VALUES (?, ?, NOW())  WHERE id = :id');*/
-        /*$newPost = $req->execute(array($title, $content));*/
+        $req = $db->prepare('UPDATE posts SET title = ?, content = ?, creation_date = NOW() WHERE id = ?');
         $newPost = $req->execute(array($title, $content, $id));
-        error_reporting(E_ALL);
+        /*error_reporting(E_ALL);
         ini_set('display_errors',1);//Afficher les erreurs sur la page
-        print_r($db->errorInfo()); // Afficher les erreurs spécifiques à pdo
+        print_r($db->errorInfo()); // Afficher les erreurs spécifiques à pdo*/
         return $newPost;
     }
 }

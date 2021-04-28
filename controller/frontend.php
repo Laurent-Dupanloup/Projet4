@@ -1,5 +1,4 @@
 <?php
-//rajouter des test
 // Chargement des classes
 require_once('model/PostManager.php');
 require_once('model/CommentManager.php');
@@ -62,25 +61,18 @@ function verifMember($pseudo, $mdp)
     $userConnexion = new MemberManager();
     $resultat = $userConnexion->checkLoginPass($pseudo);
     $resultatMembre =$resultat->fetch();
-//try{
 
     if (!$resultatMembre)
     {
-         //echo 'Mauvais identifiant ou mot de passe 66!';//n'existe pas faire une exeption
-        throw new Exception("Mauvais identifiant ou mot de passe 66 !");
-        //die('Mauvais identifiant ou mot de passe 66!');
-        
+        //ne pas oublier d'enlevver les nombres
+        throw new Exception("Mauvais identifiant ou mot de passe 66 !");    
     }
     else
     {
-        //if($isPasswordCorrect==true){
         if(password_verify($mdp, $resultatMembre['mdp'])===true){
             $_SESSION['id'] = $resultatMembre['id'];
             $_SESSION['pseudo'] = $pseudo;
             $_SESSION['droit'] = $resultatMembre['droit'];
-            //droit en variable de session on peut rediriger vers la page d'acceuil
-            //echo var_dump($_SESSION);
-            //$resultat->closeCursor();
             if($_SESSION['droit'] != 1){
                 header('Location: index.php');
             }
@@ -91,18 +83,9 @@ function verifMember($pseudo, $mdp)
         }
         else
         {
-            //echo 'Mauvais identifiant ou mot de passe 77!'; // exeption
-            throw new Exception("Mauvais identifiant ou mot de passe 77 !");
-             //die('Mauvais identifiant ou mot de passe 77!');
-            
+            throw new Exception("Mauvais identifiant ou mot de passe 77 !"); 
         }
     }
-    /*catch(exeption $e)
-    {
-        //echo 'Erreur : ' . $e->getMessage();
-        header('Location: index.php?error=mauvais_identifiant_mdp');
-    }*/
-    //require('view/frontend/connexionView');
 }
 
 function formConnexion()

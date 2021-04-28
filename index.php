@@ -17,7 +17,7 @@ try {
         }
         elseif ($_GET['action'] == 'addComment') {
             if (isset($_GET['id']) && $_GET['id'] > 0) {
-                if (/*!empty(/*$_POST['author_id']/*$_SESSION['id']) && */!empty($_POST['comment'])) {
+                if (!empty($_POST['comment'])) {
                     addComment($_GET['id'], $_POST['comment'], $_SESSION['id']);
                 }
                 else {
@@ -85,7 +85,6 @@ try {
         }
             else
             {
-                //echo $_POST['mytextarea'];
                 throw new Exception('erreur lors de la creation du billet-ou vous navez pas les droits');
             }
                 
@@ -173,4 +172,3 @@ try {
 catch(Exception $e) {
     echo 'Erreur : ' . $e->getMessage();
 }
-//booleen pour le signalement et ds la table comments remplacer author par authorID

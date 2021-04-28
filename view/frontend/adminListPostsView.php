@@ -35,7 +35,7 @@ else
         </h3>
         
         <div class="newstext">
-            <?= /*nl2br(htmlspecialchars(*/$data['content'] ?>
+            <?= $data['content'] ?>
             <br />
                 <em><a href="index.php?action=postAdmin&amp;id=<?= $data['id'] ?>#commentaires" class="crud">Commentaires</a></em>
                 <em><a href="index.php?action=updateBillet&amp;id=<?= $data['id'] ?>#majbillet" class="crud">update</a></em>

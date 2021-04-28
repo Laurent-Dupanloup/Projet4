@@ -10,17 +10,13 @@
         <input type="text" id="title" name="title" value="<?= htmlspecialchars($unPost2['title']) ?>" required/>
     </div>
         <div>
-            <textarea id="mytextarea" name="mytextarea"><?= /*nl2br(htmlspecialchars*/$unPost2['content'] ?></textarea>
+            <textarea id="mytextarea" name="mytextarea"><?= $unPost2['content'] ?></textarea>
         </div>
     <div>
         <input id="btnvalider" type="submit" value="Valider"/>
     </div>
 </form>
-</div>
-<?php
-
-//$unPost->closeCursor();
-?>
+</div> 
 <?php $content = ob_get_clean(); ?>
 
 <?php require('template.php'); ?>

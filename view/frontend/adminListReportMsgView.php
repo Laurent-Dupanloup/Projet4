@@ -10,8 +10,8 @@ while ($comment = $commentReportList->fetch())
         ?>
     <p><strong><?= htmlspecialchars($comment['pseudo']) ?></strong> le <?= $comment['comment_date_fr'] ?></p>
     <p><?= nl2br(htmlspecialchars($comment['comment'])) ?></p>
-         <em><a href="index.php?action=deleteCom&amp;id=<?= $comment['ID'] ?>&amp;postid=<?= $comment['post_id'] ?>" class="crud">Supprimer le commentaire</a></em><br/>
-         <em><a href="index.php?action=signalementCancel&amp;id=<?= $comment['ID'] ?>" class="crud">annuler le signalement</a></em>
+         <em><a href="index.php?action=deleteCom&amp;id=<?= $comment['ID'] ?>&amp;postid=<?= $comment['post_id'] ?>" class="crud"><i class="fas fa-trash-alt"></i></a></em><br/>
+         <em><a href="index.php?action=signalementCancel&amp;id=<?= $comment['ID'] ?>" class="crud"><i class="fas fa-undo"></i></a></em>
          <?php
      }
 ?>

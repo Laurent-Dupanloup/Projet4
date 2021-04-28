@@ -10,13 +10,13 @@
     </h3>
     
     <p>
-        <?= /*nl2br(htmlspecialchars(*/$post['content'] ?>
+        <?= $post['content'] ?>
     </p>
     <?php
     if($_SESSION['droit'] == 1){
         ?>
         <em><a href="index.php?action=deletePost&amp;id=<?= $post['id'] ?>" class="crud">Supprimer le post</a></em>
-        <em><a href="index.php?action=updateBillet&amp;id=<?= $data['id'] ?>#majbillet" class="crud">update</a></em>
+        <em><a href="index.php?action=updateBillet&amp;id=<?= $post['id'] ?>#majbillet" class="crud">update</a></em>
      <?php
      }
 
@@ -55,7 +55,7 @@ while ($comment = $comments->fetch())
     <p><strong><?= htmlspecialchars($comment['pseudo']) ?></strong> le <?= $comment['comment_date_fr'] ?></p>
     <p><?= nl2br(htmlspecialchars($comment['comment'])) ?></p>
     <p><?= $comment['ID'] ?></p>
-    <em><a href="index.php?action=deleteCom&amp;id=<?= $comment['ID']?>&amp;postid=<?= $post['id'] ?>" class="crud">Supprimer le commentaire</a></em>
+    <em><a href="index.php?action=deleteCom&amp;id=<?= $comment['ID']?>&amp;postid=<?= $post['id'] ?>" class="crud"><i class="fas fa-trash-alt"></i></a></em>
          <?php
 }
 ?>

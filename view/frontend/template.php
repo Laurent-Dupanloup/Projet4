@@ -6,6 +6,7 @@
         <link href="public/css/mediumscreen.css" rel="stylesheet" />
 		<link href="public/css/smallscreen.css" rel="stylesheet" />
         <link href="public/css/style.css" rel="stylesheet" />
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous"/>
          <script src="https://cdn.tiny.cloud/1/3vf77h5533axpf5nejitpmjqtpqoa59l3ksy0e06gn2nm8hn/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
      <script>
     tinymce.init({
@@ -37,7 +38,7 @@
     			if($_SESSION['droit'] == 0){
     				?>
         <li><a href="index.php?action=listPosts#listebillets">liste des billets</a></li>
-        <li><a href="index.php?action=decoMember">deconnexion</a></li><!--faire des test pour inscription connexion-->
+        <li><a href="index.php?action=decoMember">deconnexion</a></li>
     	<?php 
     			}
     			elseif($_SESSION['droit']==1){

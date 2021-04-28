@@ -10,7 +10,7 @@
         <input type="text" id="title" name="title" required/>
     </div>
     <div>
-        <textarea id="mytextarea" name="mytextarea">test</textarea>
+        <textarea id="mytextarea" name="mytextarea"></textarea>
     </div>
     <div>
         <input type="submit" value="Valider"/>

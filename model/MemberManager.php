@@ -12,7 +12,7 @@ class MemberManager extends Manager
         return $memberAdded;
     }
 
-    public function checkLoginPass($pseudo/*, $mdp, $droit*/)
+    public function checkLoginPass($pseudo)
     {
 		$db = $this->dbConnect();
 		$req = $db->prepare('SELECT id, mdp, droit FROM membre WHERE pseudo = :pseudo');
@@ -32,4 +32,5 @@ class MemberManager extends Manager
     	
     	return $pseudoDispo;
     }
+    /*armoniser le code*/
 }

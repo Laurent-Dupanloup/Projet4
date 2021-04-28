@@ -9,40 +9,7 @@ class CommentManager extends Manager
         $comments = $db->prepare('SELECT comments.id as ID, comments.comment, comments.signalement, comments.author_id, DATE_FORMAT(comment_date, \'%d/%m/%Y à %Hh%imin%ss\')AS comment_date_fr, membre.id, membre.pseudo FROM comments INNER JOIN membre 
     ON comments.author_id = membre.id WHERE comments.post_id = ? ORDER BY comment_date DESC');
         $comments->execute(array($postId));
-
         return $comments;
-        /*ancienne requete 
-        SELECT id, author, comment, DATE_FORMAT(comment_date, \'%d/%m/%Y à %Hh%imin%ss\')AS comment_date_fr, author_id FROM comments WHERE post_id = ? ORDER BY comment_date DESC
-        */
-
-        //jointure
-        /*SELECT id, comment, DATE_FORMAT(comment_date, \'%d/%m/%Y à %Hh%imin%ss\')AS comment_date_fr, author_id FROM comments INNER JOIN membre 
-    ON comments.author_id = membre.id WHERE post_id = ? ORDER BY comment_date DESC*/
-/*
-    clef etrangere pour les msg
-    ALTER TABLE comments
-    ADD [CONSTRAINT clef_etrangere_author]  -- On donne un nom à la clé (facultatif)
-    FOREIGN KEY (author_id)             -- La colonne sur laquelle on ajoute la clé
-    REFERENCES membre(id)  -- La table et la colonne de référence
-     ON DELETE CASCAQUE   
-    ON UPDATE CASCADE;   */
-/*
-
-   ALTER TABLE comments
-    ADD CONSTRAINT clef_etrangere_posts
-    FOREIGN KEY (post_id)
-    REFERENCES posts(id)
-     ON DELETE CASCADE; // Cannot add or update a child row: a foreign key constraint fails ()
-
-    //voir pour les membres si on supprime tout les commentaires
-
-    soit retirer le commentaire soit retirer le signalement
-
-    
-
-*/
-    //clef etrangere clef_etrangere_author et clef_etrangere_posts
-
     }
 
     public function postComment($postid, $comment, $author_id)
@@ -86,7 +53,6 @@ class CommentManager extends Manager
     public function reportMsgList()
     {
         $db = $this->dbConnect();
-         /*$listMsg = $db->query('SELECT id, post_id, comment, signalement, DATE_FORMAT(comment_date, \'%d/%m/%Y à %Hh%imin%ss\') AS comment_date_fr FROM comments WHERE signalement = 1 ORDER BY comment_date DESC');*/
          $listMsg = $db->query('SELECT comments.id as ID, comments.post_id, comments.comment, comments.signalement, comments.author_id, DATE_FORMAT(comment_date, \'%d/%m/%Y à %Hh%imin%ss\')AS comment_date_fr, membre.id, membre.pseudo FROM comments INNER JOIN membre 
     ON comments.author_id = membre.id WHERE comments.signalement = 1 ORDER BY comment_date DESC');
         return $listMsg;

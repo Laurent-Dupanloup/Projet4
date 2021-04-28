@@ -10,7 +10,7 @@
     </h3>
     
     <p>
-            <?= /*nl2br(htmlspecialchars(*/$post['content'] ?>
+            <?= $post['content'] ?>
     </p>
 </div>
 <div class="blog">
@@ -53,17 +53,16 @@ while ($comment = $comments->fetch())
 <?php
         if($_SESSION['id'] == $comment['author_id']){
 ?>
-         <em><a href="index.php?action=deleteCom&amp;id=<?= $comment['ID'] ?>&amp;postid=<?= $post['id'] ?>" class="crud">Supprimer le commentaire</a></em>
+         <em><a href="index.php?action=deleteCom&amp;id=<?= $comment['ID'] ?>&amp;postid=<?= $post['id'] ?>" class="crud"><i class="fas fa-trash-alt"></i></a></em>
          <?php
      }
          else{
             ?>
-            <em><a href="index.php?action=signalementMsg&amp;id=<?= $comment['ID'] ?>" class="crud">signaler le message</a></em>
+            <em><a href="index.php?action=signalementMsg&amp;id=<?= $comment['ID'] ?>" class="crud"><i class="fas fa-exclamation-triangle"></i></a></em>
     <?php
          }
      }
     }
-//&amp;postid=<?= $comment['post_id'] ?
 ?>
 </div> 
 <?php $content = ob_get_clean(); ?>

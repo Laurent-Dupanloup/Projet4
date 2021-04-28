@@ -1,4 +1,15 @@
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 500px) 
+{
+	footer
+	{
+
+	}
+
+	image .img1
+	{
+		width: 100% !important;
+		height: 200px !important;
+	}
 
 }
 
