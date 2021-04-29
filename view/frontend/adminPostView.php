@@ -54,7 +54,6 @@ while ($comment = $comments->fetch())
     ?>
     <p><strong><?= htmlspecialchars($comment['pseudo']) ?></strong> le <?= $comment['comment_date_fr'] ?></p>
     <p><?= nl2br(htmlspecialchars($comment['comment'])) ?></p>
-    <p><?= $comment['ID'] ?></p>
     <em><a href="index.php?action=deleteCom&amp;id=<?= $comment['ID']?>&amp;postid=<?= $post['id'] ?>" class="crud"><i class="fas fa-trash-alt"></i></a></em>
          <?php
 }

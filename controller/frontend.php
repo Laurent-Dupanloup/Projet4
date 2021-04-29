@@ -47,7 +47,7 @@ function addMember($pseudo, $mdp, $droit)
         $memberAdded = $memberManager->addNewMember($pseudo, $pass_hache, $droit);
     }
     else
-        echo 'le pseudo est déjà pris ';
+       throw new Exception('le pseudo est déjà pris');
     require('view/frontend/inscriptionView.php');
 }
 
@@ -64,8 +64,8 @@ function verifMember($pseudo, $mdp)
 
     if (!$resultatMembre)
     {
-        //ne pas oublier d'enlevver les nombres
-        throw new Exception("Mauvais identifiant ou mot de passe 66 !");    
+        
+        throw new Exception("Mauvais identifiant ou mot de passe!");    
     }
     else
     {
@@ -83,7 +83,7 @@ function verifMember($pseudo, $mdp)
         }
         else
         {
-            throw new Exception("Mauvais identifiant ou mot de passe 77 !"); 
+            throw new Exception("Mauvais identifiant ou mot de passe!"); 
         }
     }
 }

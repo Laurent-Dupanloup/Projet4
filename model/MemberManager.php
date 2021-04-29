@@ -15,9 +15,8 @@ class MemberManager extends Manager
     public function checkLoginPass($pseudo)
     {
 		$db = $this->dbConnect();
-		$req = $db->prepare('SELECT id, mdp, droit FROM membre WHERE pseudo = :pseudo');
-    	$req->execute(array(
-        	'pseudo' => $pseudo));
+		$req = $db->prepare('SELECT id, mdp, droit FROM membre WHERE pseudo = ?');
+    	$req->execute(array($pseudo));
 
     	return $req;
     }
@@ -25,12 +24,10 @@ class MemberManager extends Manager
     public function dispoPseudo($pseudo)
     {
     	$db = $this->dbConnect();
-    	$req = $db->prepare('SELECT pseudo FROM membre WHERE pseudo = :pseudo');
-    	$req->execute(array(
-        	'pseudo' => $pseudo));
+    	$req = $db->prepare('SELECT pseudo FROM membre WHERE pseudo = ?');
+    	$req->execute(array($pseudo));
     	$pseudoDispo = $req->fetch();
     	
     	return $pseudoDispo;
     }
-    /*armoniser le code*/
 }

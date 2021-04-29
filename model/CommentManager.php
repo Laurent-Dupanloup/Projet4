@@ -25,9 +25,8 @@ class CommentManager extends Manager
     public function comDelete($id ,$postid)
     {
         $db = $this->dbConnect();
-        $req = $db->prepare('DELETE FROM comments WHERE id = :id');
-        $req->execute(array(
-            'id' => $id));
+        $req = $db->prepare('DELETE FROM comments WHERE id = ?');
+        $req->execute(array($id));
         return $req;
         
     }
@@ -36,19 +35,21 @@ class CommentManager extends Manager
     {
          $db = $this->dbConnect();
          $req = $db->prepare('UPDATE comments
-           SET signalement = 1 WHERE id = :id');
-        $signal = $req->execute(array('id' => $id));
+           SET signalement = 1 WHERE id = ?');
+        $signal = $req->execute(array($id));
         return $signal;
     }
+
 
     public function cancelReport($id)
     {
         $db = $this->dbConnect();
          $req = $db->prepare('UPDATE comments
-           SET signalement = 0 WHERE id = :id');
-        $cancelSignal = $req->execute(array('id' => $id));
+           SET signalement = 0 WHERE id = ?');
+        $cancelSignal = $req->execute(array($id));
         return $cancelSignal;
     }
+
 
     public function reportMsgList()
     {
