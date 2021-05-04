@@ -68,7 +68,7 @@ h1
     padding: 50px 50px 50px 50px;
     margin-bottom: 50px;
     margin-top: 50px;
-    border-color: #E2884A/*#5cadd3*/;
+    border-color: #E2884A;
     word-wrap: break-word;
 }
 
@@ -80,7 +80,7 @@ h1
 
 .crud:hover
 {
-    background-color: #5cadd3;
+    background-color: #E2884A;
 }
 
 p
@@ -117,7 +117,7 @@ body
 a
 {
     text-decoration: none;
-    color: red;
+    color:black;
 }
 .newstext
 {
