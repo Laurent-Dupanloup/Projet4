@@ -43,7 +43,7 @@ h1
 {
     text-align:center;
     margin:auto;
-    background-color:lightblue;
+    background-color:#E2884A;
     color:white;
     font-size:0.9em;
     border-radius : 12px;
@@ -70,13 +70,10 @@ h1
     margin-top: 50px;
     border-color: #E2884A/*#5cadd3*/;
     word-wrap: break-word;
-    /*height: 100%;*/
 }
 
 .crud
 {
-   /* position: relative;*/
-   /*border:1px solid black;*/
    border-radius: 5px;
    margin-right: 5px;
 }
@@ -88,8 +85,6 @@ h1
 
 p
 {
-    /*width: 100%;
-    height: 100%;*/
     font-family:'roboto-regular',Arial, sans-serif;
 }
 
@@ -101,14 +96,11 @@ body
     flex-direction: column;
     margin:auto;
     width: 100%;
-   /* width: 100%;
-    height: 100%;*/
 }
 
 .img1
 {
     width: 100%;
-    /*height: 600px;*/
     height: 100%;
 }
 
@@ -173,7 +165,7 @@ header nav ul{
 header nav ul li a:hover
 {
     position: relative;
-    border-top:2px solid #5cadd3;
+    border-top:2px solid #E2884A;
     height: 70px;
     margin-top: -2px;
 }
@@ -181,8 +173,6 @@ header nav ul li a:hover
 
 
 header nav ul li a{
-    
-    /*display:block;*/
     display: flex;
     text-decoration:none;
     padding:40px 15px 0px 15px;
@@ -192,66 +182,27 @@ header nav ul li a{
     position: relative;
      box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
      height: 70px;
-     /*box-sizing: border-box;*/
 }
 
-
-form
-{
-    /*max-width: 1000px;*/
-    /*margin: 0px auto;*/
-    /*width: 100%;
-    position: relative;
-    /*padding: 20px 12px 10px 20px;*/
-}
-
-/*.tox-tinymce
-{
-    width: auto;
-}*/
 
 .tox
 {
     resize:both;
-   /* min-width: 400px;
-   /* min-height: 250px;*/
-   /* max-width: 1800px;
-    /*max-height: 1000px;*/
+ 
 }
 
-textarea
-{
-    /*width: 300px;
-    height: 350px;*/
-    /*overflow: hidden;
-    resize: both;*/
-    /*width: auto;*/
-   /*resize: both;*/
-   /*width: 800px;*/
-}
 
-/*#mytextarea
-{
-    resize: both;
-}*/
 
 footer
 {
     width: 100%;
     text-align: center;
-    background-color: #E2884A/*#5cadd3*/;
+    background-color: #E2884A;
     margin-top: 15%;
     height: 50px;
-   /* position: relative;*/
 }
 
 .divform
 {
-    /*display: flex;*/
-    /*margin: 100px auto 100px auto;*/
     margin:auto;
 }
-
-/*utiliser les font awesome pour supprimer ect
-    responsive !!!
- */
