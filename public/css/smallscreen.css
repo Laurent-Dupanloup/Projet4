@@ -1,27 +1,55 @@
 @media screen and (max-width: 500px) 
 {
-	footer
+	footer p
 	{
-
+		/*margin-bottom: 200px;*/
+		font-size: 0.5em!important;
 	}
 
-	image .img1
+	header
 	{
-		width: 100% !important;
-		height: 200px !important;
+		width: 100%!important;
+		height: 60px!important;
+	}
+
+	.mesh1 , .mesh2 , .mesh3
+	{
+		font-size: 1em !important;
+	}
+
+	.img1
+	{
+		/*max-width: 100%*/
+	}
+
+	h1
+	{
+		font-size: 1em;
 	}
 
 	.textacceuil1
 	{
 		
-		font-size: 5px;
+		font-size: 0.5em !important;
 
 	}
 
 	.textacceuil2
 	{
-		margin-left: 2%;
-		font-size: 5px;
+		margin-left: 2% !important;
+		font-size: 0.5em !important;
+	}
+
+	header nav ul li a
+	{
+		padding: 18px 10px 0px 0px !important;
+		box-shadow: none !important;
+		font-size: 0.5em !important;
+	}
+
+	.blog
+	{
+		width: 150px !important;
 	}
 }
 
