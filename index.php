@@ -105,12 +105,16 @@ try {
             }
         }
         elseif ($_GET['action']== 'updateBillet') {
-            if(isset($_GET['id']) && $_GET['id'] > 0){
-                updateBillet($_GET['id']);
+            if($_SESSION)
+            {
+                if(isset($_GET['id']) && ($_GET['id'] > 0)&& ($_SESSION['droit'] == 1))
+                {
+                    updateBillet($_GET['id']);
+                }
             }
             else
             {
-                throw new Exception('erreur lors du chargement du billet');
+                throw new Exception('erreur lors du chargement du billet ou vous n\'avez pas les droits');
                 
             }
         }
