@@ -74,7 +74,7 @@ try {
         {
             if($_SESSION){
             if(isset($_POST['title']) && isset($_POST['mytextarea']) && ($_SESSION['droit'] == 1)){
-                createBillet($_POST['title'], /*strip_tags (*/$_POST['mytextarea']/*)htmlspecialchars_decode($_POST['mytextarea'])*/);
+                createBillet($_POST['title'], $_POST['mytextarea']);
             }
 
 
@@ -82,10 +82,15 @@ try {
             {
                 createBilletForm();
             }
-        }
             else
             {
-                throw new Exception('erreur lors de la creation du billet-ou vous navez pas les droits');
+                throw new Exception('erreur lors de la creation du billet ou vous navez pas les droits');
+            }
+
+            }
+            else
+            {
+                throw new Exception('Vous devez vous connecter');
             }
                 
         }
@@ -112,11 +117,10 @@ try {
         elseif($_GET['action'] == 'updateBilletComfirm'){
             if(isset($_POST['mytextarea']) && isset($_POST['title']) && isset($_GET['id']))
             {
-                echo $_POST['mytextarea'];
                 updateBilletComfirm($_GET['id'], $_POST['title'], $_POST['mytextarea']);
             }
             else
-                throw new Exception('erreur lors de linsert de lupdate de sur la bdd');
+                throw new Exception('erreur lors de linsert de lupdate sur la bdd');
                 
         }
         elseif($_GET['action']== 'modeAdmin'){
