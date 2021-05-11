@@ -3,6 +3,7 @@
     <head>
         <meta charset="utf-8" />
         <title><?= $title ?></title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link href="public/css/mediumscreen.css" rel="stylesheet" />
 		<link href="public/css/smallscreen.css" rel="stylesheet" />
         <link href="public/css/style.css" rel="stylesheet" />
@@ -55,8 +56,8 @@
 </nav>
 </header>
 		<img class="img1" src="antique-book-bindings-books-1005324-2000x1200.jpg">
-		
         <?= $content ?>
+        <div class="divanim"><a href="index.php?#listebillets"><img class="imganim" src="bookanimation.jpg"></a></div>
     <footer>
  		<p>Copyright 2021 Laurent Dupanloup étudiant Openclassrooms. Ce Site est un projet étudiant <a href="https://openclassrooms.com/">OpenClassrooms</a></p>
 	</footer>
