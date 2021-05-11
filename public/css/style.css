@@ -93,7 +93,6 @@ body
     align-items:flex-start;
     justify-content: flex-start;
     flex-direction: column;
-    /*margin:auto 2px auto 2px;*/
     margin: auto;
     width: 100%;
 }
@@ -182,7 +181,6 @@ header{
 nav
 {
     position: absolute;
-    height: 120px;
     right:0px;
 }
 
@@ -190,7 +188,6 @@ header nav ul li{
     float: right;
     margin-bottom: 30px;
     position: relative;
-    height: 80px;
 }
 
 header nav ul{
@@ -198,14 +195,12 @@ header nav ul{
     list-style-type:none;
     margin-top:2px;
     position: relative;
-    height: 80px;
 }
 
 header nav ul li a:hover
 {
     position: relative;
     border-top:2px solid #E2884A;
-    height: 70px;
     margin-top: -2px;
 }
 
