@@ -12,6 +12,7 @@
 		height: 60px!important;
 	}
 
+
 	.mesh1 , .mesh2 , .mesh3
 	{
 		font-size: 1em !important;
@@ -38,13 +39,15 @@
 	{
 		margin-left: 2% !important;
 		font-size: 0.5em !important;
+		width: 30px;
 	}
 
 	header nav ul li a
 	{
 		padding: 18px 10px 0px 0px !important;
-		box-shadow: none !important;
+		/*box-shadow: none !important;*/
 		font-size: 0.5em !important;
+		height: 38px !important;
 	}
 
 	.blog

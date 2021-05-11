@@ -105,6 +105,43 @@ body
     position: relative;
 }
 
+.divanim
+{
+    width: 120px;
+    height: 120px;
+     margin: 20px auto 20px auto;
+}
+
+.imganim
+{
+    width: 100px;
+    height: 100px;
+
+}
+
+.imganim:hover
+{
+    animation-duration: 0.55s;
+    animation-timing-function: linear;
+    animation-delay: 0.5s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-fill-mode: both;
+    animation-play-state: running;
+    animation-name: rotate-scale-up;
+    border-radius: 50%;
+    border:3px solid black;
+
+
+}
+
+@keyframes rotate-scale-up{
+100%
+{
+    transform: scale(0.5) rotateZ(360deg)
+}
+}
+
 .textacceuil1
 {
    margin: 100px auto 0px 26%;
@@ -112,7 +149,7 @@ body
 
 .textacceuil2
 {
-    margin-left: 5%;
+    margin-left: 2%;
 }
 
 a
