@@ -99,9 +99,6 @@ function decoMember()
     $_SESSION = array();
     session_destroy();
 
-    // Suppression des cookies de connexion automatique
-   // setcookie('pseudo', '');
-   // setcookie('mdp', '');
     header('Location: index.php');
 }
 

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Apr 23, 2021 at 04:10 PM
+-- Generation Time: May 12, 2021 at 04:18 PM
 -- Server version: 5.7.24
 -- PHP Version: 7.4.1
 
@@ -68,19 +68,21 @@ INSERT INTO `comments` (`id`, `post_id`, `comment`, `signalement`, `author_id`, 
 (65, 1, 'on retest', 0, 45, '2021-04-01 00:56:48'),
 (71, 14, 'nouveau billet ?\r\n', 0, 45, '2021-04-01 01:26:50'),
 (72, 14, 'on test encore test test', 0, 45, '2021-04-01 01:26:57'),
-(73, 4, 'test de commentaire', 0, 46, '2021-04-01 19:05:35'),
-(74, 4, 'encore un test de com', 0, 46, '2021-04-01 19:05:41'),
-(76, 2, 'test de nouveau com', 0, 46, '2021-04-03 16:02:08'),
-(87, 36, 'test de com tralalalala', 1, 52, '2021-04-08 15:59:05'),
 (88, 3, 'on test', 0, 46, '2021-04-09 16:30:28'),
-(89, 36, 'test test', 0, 46, '2021-04-09 16:30:37'),
-(90, 35, 'teeeeesssstttt', 0, 46, '2021-04-09 16:30:44'),
-(91, 29, 'tessstttt', 0, 46, '2021-04-09 16:31:41'),
-(92, 36, 'on retest', 0, 51, '2021-04-09 16:39:21'),
 (93, 3, 'ca test test', 0, 51, '2021-04-09 16:39:28'),
-(94, 36, 'ajout de com', 0, 46, '2021-04-09 18:23:16'),
-(95, 35, ' je fais encore un test igjtheoiuzghouezqhgoesuqhgodsqhgoûrhguo^sqhgo^dfsqhgou^rsqhguropqhgof^sqhgof^sqhgfôdihgofpdghoruehgourhguorhgruohgrughfughfdjghfkjdghkfdjhgfdkhgfkjdhgkfdjhgihgiurhriudhigurhugirhsuoisgrh', 0, 50, '2021-04-19 14:59:47'),
-(96, 37, 'un nouveau commentaire', 0, 46, '2021-04-23 18:04:26');
+(97, 37, 'je poste un petit commentaire pour ce billet ', 0, 50, '2021-04-28 17:11:18'),
+(98, 37, 'un autre petit commentaire', 0, 56, '2021-05-12 18:04:33'),
+(100, 28, 'Vivamus quis leo bibendum, tincidunt enim nec, vulputate odio. Mauris feugiat eros dapibus, convallis augue sed, tincidunt nibh. Nam volutpat eleifend erat. Cras scelerisque maximus elit, ut tempor nibh ultricies vitae. In iaculis enim non dolor aliquet facilisis. Nullam elementum tincidunt lacus. Suspendisse tempor tempor mauris, a sodales elit placerat vel. Sed eget pellentesque quam.', 0, 56, '2021-05-12 18:06:05'),
+(101, 20, 'Nunc ut placerat est. Sed consectetur quis libero sit amet aliquam. Aliquam ornare nulla at urna commodo, sed maximus ipsum cursus. Sed vitae ex urna.', 0, 56, '2021-05-12 18:06:24'),
+(102, 14, 'Nunc ut placerat est. Sed consectetur quis libero sit amet aliquam. Aliquam ornare nulla at urna commodo, sed maximus ipsum cursus. Sed vitae ex urna.', 0, 56, '2021-05-12 18:06:32'),
+(103, 38, 'Etiam finibus, augue sed lobortis facilisis, enim magna tristique leo, condimentum sagittis justo eros sed massa. Ut lacinia pellentesque risus, quis porttitor velit ornare sed. Nullam eget sapien ut erat elementum venenatis id quis lorem. Sed at lorem non magna efficitur finibus in eget elit. Cras dui nibh, vulputate eget fringilla hendrerit, facilisis et ex. Vestibulum commodo faucibus lorem vel ornare. Pellentesque non luctus nulla, non varius leo. Duis accumsan iaculis elit, congue mollis ante pharetra nec. Nullam eu volutpat ante, vel tincidunt neque. Pellentesque iaculis luctus erat non tempus.\r\n\r\nAliquam pretium at ante vel dignissim. Maecenas id nisl porta orci consequat pulvinar quis vitae augue. Vivamus ut diam quis nisl hendrerit suscipit. Donec elementum enim lectus, iaculis sodales felis condimentum et. Nunc a mauris eu ligula pulvinar rhoncus. Mauris et vestibulum magna, sit amet facilisis tellus. Curabitur nec hendrerit elit. Nulla facilisi. Maecenas elit lorem, feugiat sit amet ante in, commodo finibus orci. Fusce nec erat quis lorem efficitur gravida.', 0, 56, '2021-05-12 18:08:03'),
+(104, 38, 'orem ipsum dolor sit amet, consectetur adipiscing elit. Nullam fringilla nibh nunc, sed hendrerit sem rutrum quis. Fusce fringilla sapien porta, venenatis neque eleifend, laoreet dolor. Curabitur orci ligula, tristique congue est id, vestibulum commodo orci. Sed pellentesque condimentum metus, a scelerisque massa blandit sed. Donec tincidunt mi massa, et mollis urna ultricies vel. Suspendisse eget velit pulvinar, scelerisque ex a, venenatis felis. Proin gravida dui lectus, quis facilisis magna vehicula eget. Cras in auctor libero, non facilisis turpis. Vivamus quis leo bibendum, tincidunt enim nec, vulputate odio. Mauris feugiat eros dapibus, convallis augue sed, tincidunt nibh', 0, 50, '2021-05-12 18:08:25'),
+(105, 38, 're test test test', 0, 50, '2021-05-12 18:09:35'),
+(106, 37, 'Fusce ultrices urna vitae urna feugiat porta. Nunc ut placerat est. Sed consectetur quis libero sit amet aliquam. Aliquam ornare nulla at urna commodo, sed maximus ipsum cursus. Sed vitae ex urna. Ut nisl nibh, tincidunt eget libero eu, vehicula condimentum arcu. Pellentesque ac blandit est. Sed a rhoncus tellus. Sed sagittis metus diam, eget egestas elit tempor nec. Fusce id molestie augue. Nullam sagittis vehicula molestie.', 0, 50, '2021-05-12 18:09:49'),
+(107, 28, 'Fusce ultrices urna vitae urna feugiat porta. Nunc ut placerat est. Sed consectetur quis libero sit amet aliquam. Aliquam ornare nulla at urna commodo, sed maximus ipsum cursus. Sed vitae ex urna. Ut nisl nibh, tincidunt eget libero eu, vehicula condimentum arcu. Pellentesque ac blandit est. Sed a rhoncus tellus. Sed sagittis metus diam, eget egestas elit tempor nec. Fusce id molestie augue. Nullam sagittis vehicula molestie.', 0, 50, '2021-05-12 18:09:59'),
+(108, 20, 'Fusce ultrices urna vitae urna feugiat porta. Nunc ut placerat est. Sed consectetur quis libero sit amet aliquam. Aliquam ornare nulla at urna commodo, sed maximus ipsum cursus. Sed vitae ex urna. Ut nisl nibh, tincidunt eget libero eu, vehicula condimentum arcu. Pellentesque ac blandit est. Sed a rhoncus tellus. Sed sagittis metus diam, eget egestas elit tempor nec. Fusce id molestie augue. Nullam sagittis vehicula molestie.', 0, 50, '2021-05-12 18:10:04'),
+(109, 2, 'Fusce ultrices urna vitae urna feugiat porta. Nunc ut placerat est. Sed consectetur quis libero sit amet aliquam. Aliquam ornare nulla at urna commodo, sed maximus ipsum cursus. Sed vitae ex urna. Ut nisl nibh, tincidunt eget libero eu, vehicula condimentum arcu. Pellentesque ac blandit est. Sed a rhoncus tellus. Sed sagittis metus diam, eget egestas elit tempor nec. Fusce id molestie augue. Nullam sagittis vehicula molestie.', 0, 50, '2021-05-12 18:10:12'),
+(110, 1, 'Fusce ultrices urna vitae urna feugiat porta. Nunc ut placerat est. Sed consectetur quis libero sit amet aliquam. Aliquam ornare nulla at urna commodo, sed maximus ipsum cursus. Sed vitae ex urna. Ut nisl nibh, tincidunt eget libero eu, vehicula condimentum arcu. Pellentesque ac blandit est. Sed a rhoncus tellus. Sed sagittis metus diam, eget egestas elit tempor nec. Fusce id molestie augue. Nullam sagittis vehicula molestie.', 0, 50, '2021-05-12 18:10:16');
 
 -- --------------------------------------------------------
 
@@ -120,7 +122,8 @@ INSERT INTO `membre` (`id`, `pseudo`, `mdp`, `droit`) VALUES
 (51, 'test33', '$2y$10$2SpIgwaFex5llURJsZai7OWg6RvjuEwo0yBXT99RVviMAM2TpREJ6', 0),
 (52, 'test34', '$2y$10$a8JZpD4j/goTzXhHAz86M.42a.BomeFtLQHyI3PlRmZYBXfpB5k0O', 0),
 (53, 'test99', '$2y$10$F2SIIXsYtPi/3.Fdox6qkeXJ.ioC32GDcv75jxtn/g1zS98c4do6i', 0),
-(55, 'Jean_Forteroche', '$2y$10$nuywvjYkpC2hPVX.x4Ylfe26TN36mGHkRhbc3B622kKvLWAmOWcwm', 1);
+(55, 'Jean_Forteroche', '$2y$10$nuywvjYkpC2hPVX.x4Ylfe26TN36mGHkRhbc3B622kKvLWAmOWcwm', 1),
+(56, 'test50', '$2y$10$6bGTTDfy6aDjHTrGa6T8G.kgwVTKhRk7YVtep9dGDbzBx8ZGPn17O', 0);
 
 -- --------------------------------------------------------
 
@@ -143,17 +146,14 @@ INSERT INTO `posts` (`id`, `title`, `content`, `creation_date`) VALUES
 (1, 'Bienvenue sur mon blog !', 'Je vous souhaite à toutes et à tous la bienvenue sur mon blog qui parlera de... PHP bien sûr !', '2017-09-18 16:28:41'),
 (2, 'Le PHP à la conquête du monde !', 'C\'est officiel, l\'éléPHPant a annoncé à la radio hier soir \"J\'ai l\'intention de conquérir le monde !\".\r\nIl a en outre précisé que le monde serait à sa botte en moins de temps qu\'il n\'en fallait pour dire \"éléPHPant\". Pas dur, ceci dit entre nous...', '2017-09-20 16:28:41'),
 (3, 'Test de creation de billet', 'je test ici de créer un nouveau billet test test test test', '2021-03-29 01:09:24'),
-(4, 'un nouveau test de creation de billet', 'je retest balbablablabla testestetergsdgokdshgjlmksfdhgmkjdfhgnmkjfdhgnmkfjdgfd', '2021-03-29 01:10:08'),
 (14, 'test de billet 2', 'je test un nouveau billet test teste testestestestest', '2021-04-01 01:26:40'),
 (18, 'nouveau billet', 'on retest la creation', '2021-04-02 15:10:05'),
 (20, 'test de billet', 'ceci est le dernier billet\r\non test encore et&nbsp;encore', '2021-04-02 15:13:03'),
 (21, 'encore un billet', 'test test\r\nencore test\r\ntetgzsgsegsdgsgreg', '2021-04-02 15:15:38'),
 (22, 'test', 'testetestsqetggfsdg', '2021-04-02 15:16:10'),
 (28, 'test de billet 55125', 'on retest test test test', '2021-04-04 00:06:27'),
-(29, 'test billet popopop', 'testpopopopp', '2021-04-04 00:58:12'),
-(35, 'test toujours', '<h2>encore un test&nbsp;</h2><br />\r\n<p>ertrgfhgthqfqgfdgfdhdfhdf</p><br />\r\n<p>fgdsgrgrgr</p>', '2021-04-04 01:09:00'),
-(36, 'rerechangement de billet', '<h2>on rechange encore le billet</h2>\r\n<p>ca marche toujours&nbsp;&nbsp;<em>eezrtzergxcfdgfdgfdg<span style=\"color: #000000;\"> <span style=\"color: #2dc26b;\">on test le text color&eacute;</span>&nbsp;</span></em></p>\r\n<p><span style=\"background-color: #3598db;\"><em><span style=\"color: #000000;\">avec un backgroundcolor ca marchettttt ggdgkfdkgfdkljhkfdjhklfdjhglkdhdghhgh</span></em></span></p>\r\n<p>&nbsp;</p>', '2021-04-21 14:42:05'),
-(37, 'Lorem Ipsum', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ligula sem, convallis quis nulla in, tincidunt feugiat risus. Sed consequat egestas ex, vel faucibus est sodales quis. Nulla viverra libero ac elementum faucibus. Pellentesque at cursus metus. Donec vestibulum ex ante, in pellentesque nisl varius et. Pellentesque dictum tortor tellus, non dignissim nibh elementum a. Curabitur ipsum augue, volutpat sed luctus commodo, blandit in nisi. Nullam eu dolor eget eros commodo pulvinar sit amet sed sapien. In hac habitasse platea dictumst.</p>\r\n<p>Vivamus consectetur luctus justo, sit amet tempor erat pretium ac. Nam aliquet felis vitae eros sollicitudin, non vulputate ante venenatis. Suspendisse in tempor risus. Phasellus ultricies fermentum magna, at suscipit elit tempor quis. Quisque arcu libero, porta vitae ex vel, vestibulum mollis ipsum. Proin eu turpis in lacus efficitur placerat. Maecenas id lorem leo. Praesent pellentesque sapien in ex tincidunt, eget accumsan mi dictum. Quisque efficitur diam vel velit lacinia, in iaculis sapien fringilla. Ut nec sapien sodales, posuere purus eu, interdum ipsum.</p>\r\n<p>Nam et mollis nisi. Suspendisse semper placerat lorem, in eleifend magna accumsan ut. Proin fermentum maximus ante. In pellentesque quis odio a fermentum. Quisque scelerisque neque ut augue pulvinar maximus. Mauris et urna mollis, laoreet sapien a, interdum mi. Proin ornare ex ac tellus efficitur, ut luctus turpis interdum. Nullam sit amet magna id eros dapibus auctor. Duis eget rutrum ante, vitae semper sapien.</p>\r\n<p>Pellentesque tempor laoreet semper. Curabitur feugiat gravida mauris, in scelerisque magna molestie nec. Ut ac vehicula quam. Morbi ultricies pharetra vehicula. Nullam id vulputate orci. Nunc lacinia eu tellus at congue. Morbi in augue eu ante tincidunt luctus nec nec mi. Maecenas a varius nibh. Vivamus in libero elementum, varius nulla in, rhoncus tellus. Ut risus tortor, tristique id malesuada et, porttitor non justo. Aenean iaculis urna at ligula accumsan egestas. Aenean sit amet augue nec nunc blandit egestas.</p>\r\n<p>Aliquam ac mauris dui. Fusce pellentesque efficitur diam non aliquam. Nulla faucibus finibus arcu, suscipit ultrices sapien placerat non. Fusce suscipit massa varius neque efficitur, vel fringilla diam cursus. Aliquam erat volutpat. Donec condimentum luctus sollicitudin. Donec rutrum eget lectus eget tincidunt. Donec eu nunc turpis.</p>', '2021-04-23 15:58:21');
+(37, 'Lorem Ipsum', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ligula sem, convallis quis nulla in, tincidunt feugiat risus. Sed consequat egestas ex, vel faucibus est sodales quis. Nulla viverra libero ac elementum faucibus. Pellentesque at cursus metus. Donec vestibulum ex ante, in pellentesque nisl varius et. Pellentesque dictum tortor tellus, non dignissim nibh elementum a. Curabitur ipsum augue, volutpat sed luctus commodo, blandit in nisi. Nullam eu dolor eget eros commodo pulvinar sit amet sed sapien. In hac habitasse platea dictumst.</p>\r\n<p>Vivamus consectetur luctus justo, sit amet tempor erat pretium ac. Nam aliquet felis vitae eros sollicitudin, non vulputate ante venenatis. Suspendisse in tempor risus. Phasellus ultricies fermentum magna, at suscipit elit tempor quis. Quisque arcu libero, porta vitae ex vel, vestibulum mollis ipsum. Proin eu turpis in lacus efficitur placerat. Maecenas id lorem leo. Praesent pellentesque sapien in ex tincidunt, eget accumsan mi dictum. Quisque efficitur diam vel velit lacinia, in iaculis sapien fringilla. Ut nec sapien sodales, posuere purus eu, interdum ipsum.</p>\r\n<p>Nam et mollis nisi. Suspendisse semper placerat lorem, in eleifend magna accumsan ut. Proin fermentum maximus ante. In pellentesque quis odio a fermentum. Quisque scelerisque neque ut augue pulvinar maximus. Mauris et urna mollis, laoreet sapien a, interdum mi. Proin ornare ex ac tellus efficitur, ut luctus turpis interdum. Nullam sit amet magna id eros dapibus auctor. Duis eget rutrum ante, vitae semper sapien.</p>\r\n<p>Pellentesque tempor laoreet semper. Curabitur feugiat gravida mauris, in scelerisque magna molestie nec. Ut ac vehicula quam. Morbi ultricies pharetra vehicula. Nullam id vulputate orci. Nunc lacinia eu tellus at congue. Morbi in augue eu ante tincidunt luctus nec nec mi. Maecenas a varius nibh. Vivamus in libero elementum, varius nulla in, rhoncus tellus. Ut risus tortor, tristique id malesuada et, porttitor non justo. Aenean iaculis urna at ligula accumsan egestas. Aenean sit amet augue nec nunc blandit egestas.</p>\r\n<p>Aliquam ac mauris dui. Fusce pellentesque efficitur diam non aliquam. Nulla faucibus finibus arcu, suscipit ultrices sapien placerat non. Fusce suscipit massa varius neque efficitur, vel fringilla diam cursus. Aliquam erat volutpat. Donec condimentum luctus sollicitudin. Donec rutrum eget lectus eget tincidunt. Donec eu nunc turpis.</p>', '2021-04-23 15:58:21'),
+(38, 'lorem ipsum', '<p style=\"margin: 0px 0px 15px; padding: 0px; text-align: justify; font-family: \'Open Sans\', Arial, sans-serif; font-size: 14px; background-color: #ffffff;\">Etiam finibus, augue sed lobortis facilisis, enim magna tristique leo, condimentum sagittis justo eros sed massa. Ut lacinia pellentesque risus, quis porttitor velit ornare sed. Nullam eget sapien ut erat elementum venenatis id quis lorem. Sed at lorem non magna efficitur finibus in eget elit. Cras dui nibh, vulputate eget fringilla hendrerit, facilisis et ex. Vestibulum commodo faucibus lorem vel ornare. Pellentesque non luctus nulla, non varius leo. Duis accumsan iaculis elit, congue mollis ante pharetra nec. Nullam eu volutpat ante, vel tincidunt neque. Pellentesque iaculis luctus erat non tempus.</p>\r\n<p style=\"margin: 0px 0px 15px; padding: 0px; text-align: justify; font-family: \'Open Sans\', Arial, sans-serif; font-size: 14px; background-color: #ffffff;\">Aliquam pretium at ante vel dignissim. Maecenas id nisl porta orci consequat pulvinar quis vitae augue. Vivamus ut diam quis nisl hendrerit suscipit. Donec elementum enim lectus, iaculis sodales felis condimentum et. Nunc a mauris eu ligula pulvinar rhoncus. Mauris et vestibulum magna, sit amet facilisis tellus. Curabitur nec hendrerit elit. Nulla facilisi. Maecenas elit lorem, feugiat sit amet ante in, commodo finibus orci. Fusce nec erat quis lorem efficitur gravida.+ update</p>', '2021-05-12 18:11:07');
 
 --
 -- Indexes for dumped tables
@@ -187,19 +187,19 @@ ALTER TABLE `posts`
 -- AUTO_INCREMENT for table `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=97;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=111;
 
 --
 -- AUTO_INCREMENT for table `membre`
 --
 ALTER TABLE `membre`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
 
 --
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
 --
 -- Constraints for dumped tables

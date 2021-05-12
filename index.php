@@ -124,7 +124,7 @@ try {
                 updateBilletComfirm($_GET['id'], $_POST['title'], $_POST['mytextarea']);
             }
             else
-                throw new Exception('erreur lors de linsert de lupdate sur la bdd');
+                throw new Exception('erreur lors de l\'insert de l\'update sur la bdd');
                 
         }
         elseif($_GET['action']== 'modeAdmin'){
@@ -152,7 +152,7 @@ try {
             }
         }
             else
-                throw new Exception('problem avec le signalement - ou alors vous navez pas les droits requis');
+                throw new Exception('problem avec le signalement - ou alors vous n\'avez pas les droits requis');
                 
         }
         elseif($_GET['action'] == 'listMsgSignal')
@@ -164,7 +164,7 @@ try {
                 }
             }
         else
-            throw new Exception('vous netes pas admin');
+            throw new Exception('vous n\'êtes pas admin');
     }
         
         elseif($_GET['action'] == 'signalementCancel') {
