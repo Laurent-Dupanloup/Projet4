@@ -102,12 +102,20 @@ function decoMember()
     header('Location: index.php');
 }
 
-function deleteCom($id, $postid)
+function deleteComAdmin($id, $postid)
 {
     $commentManager = new CommentManager();
 
     $delete = $commentManager->comDelete($id, $postid);
     header('Location: index.php?action=postAdmin&id='. $postid);
+}
+
+function deleteComUser($id, $postid)
+{
+    $commentManager = new CommentManager();
+
+    $delete = $commentManager->comDelete($id, $postid);
+    header('Location: index.php?action=post&id='. $postid);
 }
 
 function createBillet($title, $mytextarea)

@@ -58,7 +58,7 @@ try {
         elseif ($_GET['action'] == 'decoMember') {
                 decoMember();
             }
-        elseif ($_GET['action'] == 'deleteCom')
+        elseif ($_GET['action'] == 'deleteComAdmin')
         {
             if(isset($_GET['id']) && $_GET['id'] > 0)
             {
@@ -68,7 +68,17 @@ try {
             {
                 throw new Exception('probleme lors du delete');
             }       
-
+        }
+        elseif ($_GET['action'] == 'deleteComUser')
+        {
+            if(isset($_GET['id']) && $_GET['id'] > 0)
+            {
+                deleteComUser($_GET['id'], $_GET['postid']);
+            }
+            else
+            {
+                throw new Exception('probleme lors du delete');
+            }       
         }
         elseif($_GET['action'] == 'createBillet')
         {
